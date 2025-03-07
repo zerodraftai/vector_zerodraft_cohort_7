@@ -1,0 +1,913 @@
+{
+    "title": "Technical Interview with Zero Draft AI between zerodraft and Rajesh Bhayana",
+    "transcript": [
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Hey, how's it going?"
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "What's up man?"
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "How you doing?"
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Doing pretty well. How about you?"
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Not bad, not bad."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "I've been in like a straight two hour block of calls."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Oh man. You want to get some water and take a quick break?"
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "I actually, yeah, I'm okay. Yeah, no, I'm good. Get started and so on."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Great."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Yeah. How's your week been?"
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Not bad, not bad. You, you've been on calls for zero draft or for other things as well?"
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Yeah, no, no, just your draft stuff today. Yeah."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "How are things going with that?"
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "It's going pretty good. I think like there's been some development I think since last we last spoke. There's tariffs. So that's like a whole kind of product line we're kind of trying to offer. So we've been calling like manufacturers and like, hey, you guys are about to get hit with tariffs. Like here are some tariff programs. You want us to administer them for you, I see. Yeah."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Interesting."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Well, yeah, so point of this call is like, got to get an understanding of like what it is you've actually worked on that you want to claim shred on. And yeah, I can tell you basically the framework of how we operate, what we're looking for is, or sorry, what CRA looks for under their definition of what is R and D is this. It's you run into a technological problem, you can't solve it with like some conventional method. And so you make a hypothesis, you've prototyped your hypothesis, you've tested it and you have the test result. That's like pseudo scientific method. But yeah, like regardless of whether you passed, like you had a good trial or a bad trial, like solved the problem, you didn't. It doesn't matter. What matters is that you have those six or seven steps. So what we're looking for, I think we're probably going to do at least one project here. Got to do like probably three of those or just. Yeah, something I got two or three rotations of that probably gets us to a good report. Our AI will analyze it. That's why Mr. Fireflies is here. Then we'll have all the writing done. Yeah, perfect. Yeah. And then yeah, just to ask you as a start, like do you have any project write ups or like research paper or something that has come out of this work?"
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "So the thing is that like again like the research stuff is all like the traditional research stuff is all part of my day job that's going to be shreddable for the group. So I'm not shredding any of my research stuff. But even this stuff like I don't want to publish on really because that stuff is also going to be. They're going to say, hey, we give you research time, you're doing this research that counts. Anything research you do, we own. Basically. Yeah, when it comes to this, this is kind of a completely external thing and I don't know how much you remember, I know it's been a while, but it's a teaching website called Navigating Radiology and it exists at present. So I have a, like a YouTube presence with, you know, lectures on that, that website. And then I offer case based radiology courses to learners through my website where there are full DICOM cases on my website. And so there are a number of issues that I guess required me to upgrade. So basically they fall into a few big buckets. One is teaching specific features. So things like a unified platform to be able to have people work through courses that include dicoms, walkthroughs to findings, like links to key findings, an interactive kind of way of scrolling through cases. And there's an AI feedback piece to it too where you can kind of put in your answers, get feedback immediately or get hints to track your progress. There's really no unified platform that exists out there that I could just use for that and kind of unify all the learning materials on a per course basis. So at present it's a WIX website with a bunch of static links to a bunch of static link aces on a DICOM viewer. That's that I don't own someone else's DICOM viewer and so I kind of kind of try to pseudo do it that way. But this is kind of bringing it all into, I guess developing to create that unified tool. And I can show you parts of it and I don't know what parts would be best to highlight in shred, but definitely the AI feedback thing, developing that, improving upon that is going to be one probably cycle in and of itself that we could kind of focus on. The unified platform of working through courses like from start to finish where you're able to jump around to different cases and kind of get the learning material with links to key findings and teaching material all kind of visible on screen is another. There's also kind of different ways to work through the courses. So there's like case driven mode where you just kind of click through and work on your own. Or there's video driven mode which we also develop for that doesn't exist. It's a custom development where you know, Chris's team helped me kind of, you know, you can click video driven mode and it flips. So it's just, you can sit back and watch a more passive learning experience. And there's, there's a bunch of more, more stuff I guess like there's the kind of a content management system on the back end I think is also worth highlighting because that's I guess facilitates the process of making it easy for me to upload more cases, put in material, build courses, move them around kind of more efficiently, edit those, those courses. So those are kind of all of the things that I are the reasons why I did it. Other things, I don't know if this is relevant but also like security. So currently anyone could just download the links, right? They could just copy the links and they would own those links in perpetuity. There's no security that way. So now it's kind of secure embedded in a, an actual platform from, from a pseudo scientific method. I mean there's one is creating this and two is going to be I guess collecting feedback and improving upon it as we go. So the AI feedback stuff for instance, I don't know if that's part of what needs to be highlighted in that case, in this case. But I'm just trying to think of ways we can kind of highlight like collecting of analytics and you know, increasing users and you know, following. We have like mouse flow and all the classic analytics to help kind of improve upon things that way. But I mean I don't know if there's really a kind of a collection for the hypothesis of like there's no security before, there's no AI features before, there's no unified platform before we're building it for the first time. So I don't know if we really have a way of. I guess the testing could just be that it works like we went through many iterations of the development that or user acceptance testing for instance."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "We would need like just a list of like when we talk about like that specific kind of like thread of work, we'd just be like here's some qualitative or quantitative methods that we used."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Or criteria or whatever."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "So lots of different ways to go about that. Yeah, I would love a demo. It would be make it a lot easier for me to understand what's going on. But also when did like okay, so your fiscal year. Can you remind me when it ends?"
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "So their complexity is that I used to be Rajesh Bhayana Medicine professional Corporation in, you know, previously that year end was October 31st of 2024, I had a Holdco. Then I just moved over. As of January 1, 2025, the HoldCo changed names. Now it's Radiology Intelligence Inc. And dba, or doing business as Navigating Radiology, which is the name of this particular thing. So from January 1st on, I'm going to be collecting all funds and everything into Radiology Intelligence Inc. Previous year I didn't give myself salary. It was all dividends from a medicine professional corporation. But I kind of amalgamated the income from here, income from my day to day work and other things all went into that. Now it's separated out into Radiology Intelligence Inc. And I will be giving myself a salary this year. So for calendar slash fiscal year 2025, because it matches up, I'll be giving myself a salary through that Corporate Intelligence Inc. Although the expenses for the development, like the development firm and everything like that, like Brainbox for instance, kind of straddles. The year ends unfortunately slightly. So I'd have to look at the exact invoice dates. I've asked them to kind of provide that for me and ask them when they did the work essentially to be able to say how much goes into 2025 versus 2024."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Okay, I understand, but then, but that is in the MCP anyway. Those costs that you're describing for the previous period, right?"
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "What do you mean mcp? Oh yeah, the mpc. Yeah, no worries. Yeah, yeah, okay. That would be in that. So if I wanted to, I could tread there. But it might just make more sense to just start clean and do it this year."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Okay, well here, here. Yeah. So if you want to recover costs that already happened. Right. Like you got to do it for the previous period. Right. So like you can start incurring costs as of January 1st into this business, you know, go forward, you would only be able to file your claim know after December 31st."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Right. Okay."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Just. Just to be clear on that. So if you're trying to claim shred on work that you've already done, it should probably be in the mpc. Yeah, I believe. Yeah, yeah. Okay, cool. And then yeah, for that reporting period, it's from November 1st until October 31st from what I understand."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "So yeah."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Yeah."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Okay."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "I'm just gonna go with the story of like that's the corporate we're using for the first thing. And then you know, next year you can early for this fiscal year end, you can just switch it over it not a big deal. And yeah, I'm just trying to plan."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "It so that, you know, one we may find that the number, I don't know what the number is. It's appropriate that we could say, okay, it's even worth doing it for last year because if we say, oh, the number is too low for 2024, we should just do 2025 because. And you can educate me on this, but I didn't take a salary in 2024, only in this year. So I'm also doing that to also plan for the fact that I'll want to be doing shred this coming year."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Okay, got it. So there's like, basically you're saying there's no expenses that you know, are applicable for this thing in the previous period."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Right. Well, I mean, it would just be the expenses of the contractor. Right. Because for me, I didn't give myself a salary or have any salaried employees."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "No, that's okay. And do you know approximately. I think you probably shared this, but you know, approximately how much or we don't also don't need to get into that because the point here is really just to do the technical interview stuff. But like, to answer your question, like, we'll probably be able to figure it out either way, like whether it's worth it or not. But."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Yeah, yeah. So I mean, overall I can tell you it's probably going to be about 100 to $120,000, but it's straddle. So I don't know, I have to figure out how much is in each period, but it's probably going to be like 50 and 70 maybe, maybe 40 for last year. 40 or 50 from last year and then maybe 40 or 50 from. Or 50 to 60 this year. That's just for contractors. And then for me personally, I'm going to have my salary be in 2025, about 250,000. And then I don't know, whatever the appropriate percentage is to then take regarding the time spent in 2025 would be kind of. I'm planning it for this next year for sure. And then we kind of have to see how that would work for previous years."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Got it. Okay. Yeah. I mean, I don't think it should not be a problem. We can figure out all those details. Okay. So. But from what I understand, the reporting period we're talking about Right now is November 1st, 2023, until October 31st, 2024."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Yeah. Right. Okay."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "So when did you start with this navigating radiology?"
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Like the actual navigating radiology itself, pre brain box, pre development, like just the initial platform or are you talking about this new, this new project?"
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Okay, I Guess. Yeah, like, let's just say this project."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "This project. Find out exactly. Like, it was very. It was early 2024. So, for instance, like, Chris and I connected in February 2024."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "And you started building navigating radiology then. Is that right? Or am I, like, am I missing the."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "No. So basically, I mean, the YouTube channel started when I was a resident in like, like 10 years ago, eight, nine years ago, is just videos online. It was the start of 2023 when I started to. The story is that I started offering courses and selling them on my website in like, January 2023. Yeah, so it's been about just over two years of that. But basically after about a year of that, it started to grow. But I ran into all of these problems after a year in business, essentially. And so after a year in business, I realized that I had all these issues that need to be solved, and that's why I went ahead."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "So then you're saying, like, this is somewhere like January 2024, you're starting to realize that you have technological problems that, like, are, you know, in the way of growing or whatever. You need to. You overcome these problems in order to continue growing and building out navigating radiology."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Yeah."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Right. Okay, so then at the start of that, like, what. What were the core kind of problems right now? A few, but if we can."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "So the core problems are security. Right. So there was no security at all. Like, it was just a website with static links. Anyone can download those static links and they'd be theirs forever."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Yep."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Number two, there's no unified radiology platform to view dicoms on with. Dicoms is like the type of imaging file. Like the, Like DICOM is the image extension file. Like in a JPEG, there's a DICOM or DCM."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "DCM."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Okay, DCM and that's. They call. People call them DICOMs. And DICOMs are the actual radiology images themselves that are like, you know, meant for diagnostic viewing. So they're a special type of, I guess, industry standard. And you have special viewers that exist. So there are special viewers that exist, but they are siloed in that they don't offer the ability to have kind of a unified platform where you can kind of work through cases in. In the context of a custom course, essentially, is what I was building. Okay, so like a radiology learning platform, A unified learning platform that allows you to view DICOM images and learn from them in an interactive way? Essentially, yeah."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Okay, so forgive my background, but, like."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "No, no, no."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "What I understand for A DICOM is, it's like, it's kind of like a scan, like a bunch of slices of pictures. Right."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Ex. Can't. When I show you, I can't. Maybe I just show you and it'll be also more to understand."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Okay, yeah. Could you, could you just like give me a quick."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Let me just quickly share the platform so show you the current platform as well. Actually, I'll show you there. I'll show you the new one actually. One sec, let me share the screen here. Okay, you should see the whole screen now, right?"
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Yep."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "So this is the future platform basically. And so I'm just going to log in here. So the idea is that you have, you know, all these courses, for instance, like liver mri and you know, you can look at your cases. So this is what this, this is like the radiology viewer here on the left. So I don't know if you can see my mouse."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Yeah, yeah."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "And so these are all these images, you know, are of a patient. They have a bunch of liver lesions and we're trying to figure out what it is. So basically, you know, a person would look at all these and try to figure out what it is. So there are DICOM viewers like this that exist today, but we've kind of securely embedded it in our website and now we have the ability to have interactive like teaching features. And the interactive teaching features are the two main ones are this ability to AI feedback, say you don't know what's going on. You can ask for a hint or submit your diagnosis like this is not cancer, but if I submit something, it kind of like responds to you and gives you some information there. And then if you move forward, look at the diagnosis, you'll kind of can naturally progress through a course which is all custom built of course, where you have all your learning material here and I can, okay, I can read about it. I've always also obviously built this and then there are links to these key findings that kind of teach you everything you need to know to like how you can figure out it is what it is. And you can still look at the case and everything. So we basically."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "That's annotated manually, right?"
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Yeah, so this is, I've manually annotated and to be honest, this all exists like these annotations all exist on my old website. So this is my old website where I can just. It's all built on wix and it's not like horrible, it's just that this is kind of what it previously was."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "And then like how do you get the dicoms."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "So the dicoms are de identified completely and they're just cases, like learning cases. It's kind of the same idea as if someone's making a textbook. Yeah, this is how it works currently. It just literally embedded links on a page so anyone could just download any. All these. But basically this is a static link that anyone can just save and keep. But it's the same case and they have the same. It's the same content. Like I'd done this previously with all these imaging findings that people can learn from. So it is true that that existed. That being said, it's kind of in an unintuitive space and it's also like not."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "And sorry that writing. Is it based on AI at all? Like there's no."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "No, I wrote, I did all this. This is manual."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "And then. Okay, and question for the new platform. Yeah, this is also not AI, right. Or this might be."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "This is all the same content I wrote. Okay. None of this is AI. The AI is only this part where you're saying something and this AI has access to what the answer is. So it's telling you, okay, well that's wrong. Look at this, this, this, you know, and based on the information it has in the answer, it knows how to direct you further in like a Socratic type of way. So it's like using questions and asking questions of the learner so that they can try to figure it themselves and learn like that. And so a platform like that doesn't really exist in radiology and that's kind of the purpose of it. So you can kind of work through your course in a unified way. Like you can see all. I have this little shelf here where you can kind of. It's like a custom built case list or I should say like, like course that you can kind of work through and jump around. It's kind of like your own PAX viewer or like a radiology station, but for like custom built for teaching essentially. Probably be the easiest way to explain it to the. The Shred team. And then I mean we don't have it out yet because this is not the actual content. This is just kind of like a staging environment right now. But for some courses you can also do. It's called Video driven modes. That's also custom built. So increasing the video content was important. So you can swap it and it'll just play the video and then when the video is done, it'll just kind of work. It'll kind of automatically play and go to the next, next page automatically. And Keep kind of working through your course. You can kind of sit back and be less hands on and have it be a little bit more passive. So I'd say that that's kind of like a good way to, to conceptualize the platform. The other thing that was really important is that it's very inefficient to create these courses. So I guess we have the security issue. The, I mean the entire, I guess number one would be and highlight up front is just the ability to build like a custom learning platform is kind of. That doesn't exist. Right. So it's a, it's a unified radiology learning platform that you know, is dealing with very specific file types, AKA DICOM files. It's integrating all of these learning features into one place that didn't exist, including state of the art AI feedback, like you know, integrating large language models, GPT4O, etc. To create an interactive and engaging and gamified learning experience for the learner where they get immediate feedback, answers, etc. And then all the navigation features to learn at their own pace or learn passively via video. So that's kind of the overarching big thing. And then there are many other ones. Like the security I mentioned is another big one. Another one is the ability to. Sorry, like that previously another issue is that it was very inefficient to create content and courses. So one of the things that they developed for me and that I've worked on is this content management system where on the back end you can still see my screen, right?"
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Yep."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Okay, perfect. Where I can actually just create courses via this. This is custom built to facilitate the process of quickly building courses and quickly editing case lists. So previously if I wanted to move things around, I have to remanually renumber everything and go through the whole process of editing everything. Now I can just quickly change the order, I'll renumber, I can change the answer, I can click on any given case."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "What if you do the little kebab thing on under actions, what does it actually let you do?"
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "What do you mean? Oh, the three dots. Yeah, yeah. So this, this. So this is how you edit a course."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Oh I see. No, sorry, it was under one. If you go back. Yeah, there's like actions. Yeah, like there."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Oh yeah. This is to edit the course. So you. This is mainly just the course information just for like the description of the initial course."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Uh huh."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "This is more just to show how it's going to display. But I guess the meat and potatoes is actually at the level of the Cases themselves."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Yeah."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "So within the course I'm able to, you know, break them into sections. It'll automatically number the cases, specify the clinical history, so the clinical information that they need to make the correct diagnosis, to provide them with feedback with the diagnosis, to tell them what the difficulty level is, they know and can choose the right cases. And then also to actually, like, this is where I actually upload the actual DICOM files and then can actually work on annotating a unified and more efficient way to write out the answers in a way that's conducive for the learners to learn from and to annotate these things."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Okay, so just to be clear, the AI does not actually have vision or understanding or interaction with the dicom. Right. It's like."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "It has the diagnosis text and it has the diagnosis text and then it has all the learning material and key findings. It has access to all this text. So it's basically just the language AI, but it is using state of the art AI to be able to understand this text and provide the learner with feedback that's custom to their answer or their questions."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "And then when you're saying it's understanding the text, is there. Yeah, I guess really like one shotting that whole kind of text into the prompt and being like, here's the question, answer it or."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Yeah, well, I mean, like, I have a system prompt that I developed that was basically instructing how to respond to different types of things, what the limits are using the Socratic method, not giving away the answer, directing them more generally to kind of make sure that they kind of work through it themselves. It's kind of like the model is kind of like, you know, the Salcon, like Khan Academy thing."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Yeah."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "So Khan Academy is one of the first things to integrate GPT4. And they really harped on the Socratic method of like asking the learner to learn to work through themselves. So I'm kind of doing that, or trying to do that at least by I guess lightly directing the user by asking them questions and having them have to critically think through things. Again, something that doesn't exist."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Is there any, I guess, evaluation or bounding or something? Like, okay, like I'm, I'm asking the LLM a question or like, you know, it's like cancer."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Yeah."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "And then the LLM response, rebounding that response in any way and measuring it, like, how do you know if it's correct? Yeah. Or like if it's giving the right answer, like, or like how do you know it's not giving out the answer? Or something like that. Do you have any measures or anything like that, or."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Well, to be honest, this was just because it was a. It was a later addition to this. The honest answer is, for this, I'm not collecting feedback. We're not doing it as, like a full research project like the other LLM research that we're doing. We're just like. Because I've had all the research I've done in LLMs, like, I have a good experience with it. It's honestly just like, testing it, I guess you could say. It's. We could put it in, like, a way that's less colloquial of, like, I'd spend a lot of time to basically trial and error, but there's no actual official, you know, statistics as to how often it's like, hallucinating or whatnot. But it. It does very well. So I've just done it through trial and error, basically."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Yeah. And then when you do that trial and error, what does that look like? Like, are you. Do you have, like a set of prompts or you just, like, kind of doing it by inspection?"
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "So I actually made like, a staging environment where I just built it myself in Python. And it's like there was another ui, this is before they even built the ui. And I would basically put in what the answer is, and I had a box where the answer is and what the learning findings were. And then I would just literally trial and error with, like, give me a hint is a. Is a standard button which would give them a hint, but then also just putting in different answers, essentially. And then because it's qualitative assessment of the response within kind of how I wanted it to behave. So because I was doing it myself, I didn't really, like, actually formalize the process of, I guess, writing out exactly what those bounds were. I just kind of wanted to behave how I wanted to behave. Right."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "But then I guess my question is, like, you wouldn't be able to point to this. There's no artifacts or whatever. Right? There's no here's the test result, or."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "What do you mean by that?"
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Okay, so you said you created a custom environment for this, right? Like you wrote your own flask app."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Yeah, exactly."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Like in the staging environments. And then you're like, hitting that button, give me a hint for this course. Right? And then you're tuning your prompt, your system prompt or whatever. Or like the prompt of, like, what. What does give me a hint actually give? Because it's not giving me, like, give me a hint. It's gonna be like, give the user, like, whatever, a hint, but make sure not to, you know, give away the answer."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Not to. Exactly."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Yeah. Use passive voice. You know, be really concise answer in JSON, whatever. You're."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Exactly. All that stuff is in there."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Yeah, yeah, but is that like an experiment that you have that you can, like, point to? Do you know what I mean? Sorry. Yeah, yeah. What I mean is, like, would you be able to go back and say, like, hey, on June 1st, I ran this experiment and I can say the."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Date, but I don't know if I would actually have, like, a record of it. Like, I have the fact that I have the files on my computer, like, I can open up, like, pycharm, for instance, and see. Let's see which one it is. Navigating feedback. You see this?"
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Yep."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "This is like the prompt, for instance. And I don't know what. I mean, this is all going to be some other stuff I've been writing in the interim. It's me pushing and everything like that. But basically, this is kind of what the code looks like."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "So. Okay, the reason I'm asking is, like, let's say we submit this project, right? And CRA opens you for a review and they're like, hey, prove it. Like, prove that you tested this."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Yeah. Point to this. Like, if you. You see, like, if I were to."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Run this so you could show the, like, what you're doing, I can show."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Exactly how, like, this is all me. Like, this was not obviously what it ended up looking like. This is kind of how would paste the diagnosis. Paste key findings. And I would press. Give me a hint and, like, kind of work on this. So for instance, like, if I said."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "So, like, this is the real diagnosis based on that D. And there would."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Be way more, like, verbose content."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "So everything on the left is like a, like, objective ground truth and then."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Exactly. Yeah."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "The diagnosis is what you're really."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Exactly. Yeah. Okay, so now they say. Let's say they say hemangioma and they press submit. This would basically fire back or should."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Yeah. And then do you have a record of, like. I mean, like. Okay, what would be like, the best is if you had an Excel file that had, like, here's the diagnosis, here's the key findings. Here is either, like, a result. I mean, maybe not a result, but at least. Okay, I assume you're not tracking the results. Right. But, like, do you have a matrix of, like, here are the at least a few, like, diagnoses and key findings that you're. You're at least using to Iterate on your prompts."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Yeah, I mean I use, I just copied and pasted it. So I didn't do that, but I could create that like retrospectively. But the other thing is like what I did is like in the actual application there, there's just variables that are sitting here, right. Castings and materials and diagnosis. And those are where they in the database itself points to these in real production. But at present the way I did it initially was just to paste them in here because I didn't have a database."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Yeah, because this lets you like trial like 15."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Exactly. Yeah."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "No, I understand. No. Okay. And that's fine. Like this is, this is good. I just wanted to ask that question. Let's talk really briefly about. Okay, I guess we should finish on this point. So I get what you're doing. Where the experimentation lies. Is there anything that was like challenging that you had to like what did you learn or what did you arrive at? Like you had certain prompt techniques at."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "The start and you're specifically talking about the AI stuff now still."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Yeah, yeah, still on this, like let's say you were doing."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "We can say that initially like, like we did limit it to only two back and forths because we found that the longer you go, the more it's like likely it is to hallucinate or get off topic. Right. Like the longer your conversation, the more it's going to start to. Or you can, you can also jailbreak it and there are other things you can do via longer conversations or just get it to behave kind of in a different way. So to set. To keep it very limited and on topic, we only allow two back and forth basically was one of the things we learned also like really making sure it's not giving away too much like it. We wanted to make sure LLMs don't understand the domain specific stuff as much as we'd like. So you know, sometimes we would say give me a hint and we just literally say like do you see any. You know, look at the appendix. Is it inflamed? Look around it. Is there any inflammation? Like the whole point is finding out that it's, it's appendicitis. Like you're basically giving away the diagnosis by really asking those questions. We have to keep it as general as possible."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "And so were there any techniques that."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Kind of like just prompting, to be honest."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "And so like the prompting. Yeah."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "So this is, this is very generous. Initially it would have said for HCC would have said something like, you know, really give it away but we kept it really general. So Take a look at the liver, look at different terms of enhancement compared to the rest of the liver, etc. It's like pretty general. Yeah."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "And then, and so you're, you're basically saying. So it's the, the technological issues, like you're giving it away. The answer. Right, yeah. So in order to not give it away, you're like changing the prompt, you're making sure it can't be jailbroken, you're limiting it to two back and forths and. Yeah, but by reflecting those things in the prompt, it's not like you're not running into that issue anymore."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Right, Exactly. We kind of solved that issue. That being said again, like, I'm just talking in general, the whole project, what we're going to put into 2024 versus 2025. I don't know how that works. You can, you obviously have never done shred, so you'll know that best. But the idea is that, you know, these are just all of the issues that we try to solve for, but what we put in each bucket is going to depend on obviously when we did it and also when or how that generally works. Yeah, so that's, that's kind of the platform that's."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "And then, and then everything that we spoke about so far is that all work that was done kind of before."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "November of 2024, not the AI stuff. The AI stuff was done this year."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "When did it start specifically?"
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "It's February now, actually. You know what, it's going to be hard to tell, but I think that the AI stuff probably straddled like I could already. I think it's definitely started before November 1st and now it's continuing or continued until very recently now. And we're going live March 3, but there's going to be ongoing iterations. So there's work before and after the deadline. And a lot of the work this year is going to be like adding more content and actually using it to kind of bring up to speed and kind of iterating as we, as we go."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Okay, you talk about the DICOM reader briefly. Sure, yeah. Basically this is like a package that exists. I guess it's a Python thing, right?"
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Yeah. So there, there are open source packages that exist that provide individual toolings for it. And there are a bunch of products that people put out that are meant to be DICOM viewers. Like there are free DICOM viewers that exist, that being said to like optimize it for teaching. There are a few that actually allow you to kind of do all the things that we wanted to Do. This is basically just a standard DICOM viewer, but it's embedded in a teaching platform. And then we've actually had to connect. We actually get the code from one of these companies basically and then edit it to our own liking and then make it so that we can actually embed this in the webpage. Because by default, if you remember the. Let's see if I can find that. This one is all in one external platform where you're doing these links within this kind of card. So we kind of wanted it to all be embedded in our own platform here. So this is all kind of on page and the learners can kind of learn through."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "So the question is, I guess the dicom. Now can you go back to that? Sorry, I know you can't see me, but. Okay, this is like an open source package that you found, is that right?"
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "The open source package is what the original creator of the DICOM viewer did. This, this PAC Spin thing is an existing tool that allows you to kind of save teaching cases. But again, it's not really designed to create your own teaching platform like I have. It's just to store your own cases. And then what I was just doing is linking. Linking my website to all of my own storage, but obviously it's not secure because people can just download it and I had to embed it and then embed the teaching and do all that stuff around it. That makes sense."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Yeah, sorry, there's just a few things going on. Okay, so like outside of content management, right. You started off, let's say, with this DICOM tool that like exists on PAX Bin."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Right."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "And you're using, I guess, a derivative of that, right?"
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Kind of."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Yeah, yeah. So the Paxman has like a good enough kind of DICOM viewer. You wanted to use that and embed it. So like it existed in the open source but it was not good enough for you to just use out of the box."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Exactly. Okay."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "And the reason is extra couldn't be embedded, from what I understand."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Well, I mean, where I would need the technical expertise to actually do it, to like custom build it to be embedded into a website and do all that stuff? Yeah, if that makes sense."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Yeah."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "To manage the files in the back. And basically now I'm hosting all the files as well on my own."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Okay, so were there modifications to that package? Basically code modifications to make it work on your page?"
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Yeah."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Yes. And then can you tell me a little bit or maybe I. That's done one by one of the contractors, right? More so."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Contractors. Yeah."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "So would it be Better to talk to them about like any DICOM specific stuff or should I leave that perhaps?"
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "I mean I can provide you with an overview, but like I don't know if they did that much with the DICOM viewer. Like they, it's. It's probably more like aesthetic stuff but then also all of this like the embedding answers and links on a page and connecting the two of them is all new."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Okay, so there was no way to do that. I want to click on what an annotation. It should take me to slide seven of the dicom with the arrow."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "There was no way to do that embedded on an external page that I knew of. But."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "There'S also the whole issue of to actually annotate it yourself. That is also something that you custom built."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Yeah, I mean you can actually annotate impact spin. Right. Because obviously impacts been here. I'm edit it. Right. But this is all native to like on their platform here. Right?"
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "You have to redo it."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "I had to redo it basically because I wanted it to be embedded in the context of a case based course. Right. So like these courses are more unified and essentially like everything you need to know about a topic. That's the, the hard work is like curating this list to just be able to work through and then know kind of how to read. That type of study versus what's out there right now is just a bunch of fragmented stuff."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Right, I understand. I just wonder how much of this like. Okay, there's just certain parts of the development that like are, you know, credible versus not. For example, like think like, like making your courses and compiling that stuff actually, you know, cut could probably be treadable."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Yeah."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Like, because you're. That is research."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Right."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "You're. You're finding."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "That's my. But that's my time. So how's that going to work if I didn't have a salary?"
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Exactly. It's a good question."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Yeah. So this year I can do it, but not last year."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Yes, this year you can do it. Like, I mean look, you can go into the report anyway and just like could be something you're not claiming the work on."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "How's. What does that mean?"
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Okay, like I'm the founder of my company, right?"
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Yeah."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "I'm working on R D. I'm like the lead developer and I'm not paying myself. It doesn't mean the work didn't get done. It's still shred work and then there's like auxiliary staff. Like without my work, that shred project couldn't have been Done right."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "That's a hundred percent the case in my situation too. Like there's all the stuff that I was doing and all the hours that went into it, obviously wouldn't be able to do anything."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "I would definitely need to double check whether that kind of like you know, compilation of research, the research and the compilation of results to generate those course documents. Like does that actually count as shred or not? Good question. Because again it has to follow that technical framework. Like you had to have a technological problem, you can't resolve it with like a off the shelf solution. You have a hypothesis, prototype, test, test result. So like if it follows that format and it's you know, applicable category that counts. If it doesn't, it doesn't."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "I think that then, then the idea is to the ability to create curated and comprehensive courses with basically I, I, I think we like, I guess I don't know how strip works, you would know better but like the more general we, we kind of sell the initial idea, would that not help? Like for instance, it's like it is like essentially an interactive textbook, right? There are traditional radiology textbooks, there are all these pieces out there, but it doesn't exist where you can create an interactive curated textbook course that has full DICOM images in it, has full learning answers in it, has links to the findings, has AI features, interactive. It's basically the creation of an interactive radiology textbooks textbook through case based learning and whether individual pieces of those are obviously potentially available in different pieces elsewhere. To create a unified platform to do that does not exist. And so that's kind of the core of I guess the general idea that we could say is novel and doesn't exist. Really, right?"
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Yeah, totally, totally. And then out of the actual. Yeah, as a high level driving idea. Absolutely agree with that. And that's a great case. Now the pillars that it stands on, the first one is at least in the order that we talked about, is the AI kind of back and forth prompt engineering to kind of bound the results. It doesn't give away answers, but it also understands what you're doing. So there's one thread of work around that that we discussed and I think we discussed it enough that we don't have to go back to it. The second one is this DICOM viewer experience. You had to embed your own DICOM view to get it so that the annotations work that when you click them it'll put back to the right thing. There's a bit of a security content management thing that is going on because you had this issue. But people were. I don't know if people were actually going and accessing that or you're like, oh crap, people could access this. But anyway that got resolved. So now you have this kind of all in one DICOM experience that is like you, you there. You couldn't just find it off the shelf. Like you actually have to."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Exactly. People also don't know if they have. I looked at this case before. How do I track my progress that didn't exist before. That's all new as well. So they can see kind of, you know, how far have I, you know, if I go to my progress here I can also kind of see how much I've done in a course. And you can kind of see which once you've accessed an answer it kind of checks off. Previously was just a bunch of static links because that's all I could do."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Yeah."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "So I don't know if that kind of counts."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "You estimate how many DIC or how many courses or modules. I guess not courses but actual whatever you want to call it."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Imaging is basic over 350 right now there's over 350."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "So the third issue is like you're managing a course selection or like module 350 modules across whatever amount of courses."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Yeah. 13 years now."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Yeah. So like that is actually a lot of overhead for you to actually be able to manage. So like the next other thing."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Exactly. If I had to change the order from like say add one case as case number two, I would have to manually go in on my WIX website and say okay, number three, number four, number five, edit every single case thing and every single answer. Move everything down. Now I can just press a button. Right. So it's like. That's kind of."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Right. So now you have this dragging interface. You have like different editing interfaces. So you're able to much faster not only build a course but also make modifications to courses if there's a mistake."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "To upgrade to or to update. And to provide the teaching courses in cases is much more efficient than it was. Yeah. Previously."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "And just to be like, I mean just to follow my own methodology that was describing the reason you couldn't just like. The reason this is a problem is because you actually built your own thing, the DICOM viewer number two, you have your own format. You can't just like. There's no easy off the shelf solution for you to just like yeah. Implement this. You had to, you had to go through the work of like building that customized DICOM view or your own data structures."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Yeah."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "And only then could you build an editing interface that is like hyper specific."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "To your exact content management solution that is. Yeah, exactly. Hyper specific to the ability or to the. To the goal of providing that unified, you know, 30 to 50 case course that kind of covers an entire topic where a learner can learn everything they need to know about radiology or a specific type of study in a more efficient way, essentially."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Great. And then could you show me the content management thingy one last time?"
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Yeah, so there's different things. There's the. I mean, I have access to the users, but basically the meat and potatoes of it is this. There's basically different sections. So the introduction, I can put links to videos here and then all the cases here where I can edit each case, add video answers to it, quickly upload the actual DICOM files itself, edit the actual dicom, like annotate it in this management system, including writing answers, linking the findings here, all via this platform. And then the video answers as well here and then. Yeah, these are just more like filtering for the list things. So, you know, adding it to the Right. Switching courses, adding it to the course, changing the difficulty, publishing it, keeping kind of like my pre, like unpublished courses are also there. This is providing the history and the diagnosis as well to list in the. In the course. Yeah."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "All right, great. I think I have enough for a project."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Okay."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "And we're like, you know, we've got 10 minutes left, so I don't really know what else to ask. Is there anything else that stands out that you want to highlight?"
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Like, what do you think is. Like, what. What would be the next steps? Like essentially we would write. It'd be a project that we apply for in the MPC in 2024. Yeah, for that. For that year. And I'd put any contractor expenses, but I can also put the shreddable content from my own side as well. Correct."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Yeah. So what I understand is that we have from, you know, start of the period January, sorry, November 2023 to August, October 31, 2024, all the costs are under the MPC. Right. So you're going to have certain amount of the contract expenditures in that."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Right."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "So you're claiming under that corporation shred for the purposes of building this project and. Yeah, then you have another. Or I don't know if like the rest of the costs are still in an MPC from the period of November to January or they're just not."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "There's one month where right now technically I may have spend. I have to check if there's any expenses that came in there, but I can move them. I mean the new corp. Didn't start till January 1, 2020."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Sure. But then we're basically saying the rest is going to go after January 1st for fiscal year 2025. You're going to put any, any other expenses, including your own salaries, in that box."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Yeah, right."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Okay. And then you won't be able to claim against until at least December 31st. I mean you could pre submit a project, for example, and that's fine, maybe that's something we should do. But in terms of like the current shred application, part story, we're only claiming for the MPC period that I just described for a portion of contract expenditures. Everything else is going to go into."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Your current co question though. Will it be an issue that it's changing corporations? Because I did a purchase and sale agreement to move it over to my holdco. But will they be like, hey, why'd you do this? Why'd you sell it for a dollar? Like all those things? Like, will the CRA be kind of looking at this as a result more closely?"
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "No. So I've seen projects go like between mergers, like splits, whatever, rebranding, new corpse. Happens all the time. Okay, if your question is like, is it a problem? Like it's not a showstopper, will they potentially have questions about it? Could be, but most things is because."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "I did the purchase and sell for $1, they could say, hey, why'd you do that? Like it had some value previously."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Like you're, you're a private seller selling it to yourself. So like who cares? Nobody in my opinion. But like, I mean I'm not the tax professional, I'm the engineering professional. So yeah, yeah, I can ask that to Alex. But like my immediate reaction is like, no, I don't, I don't think it matters. Okay, so what I'll do is I'll write up a project. We'll be able to probably get it done by Monday. It's just very like tomorrow looks like today for me where it's just like one block of meetings. Like looking at my calendar and the other screen, it just makes me shake my head. But yeah, so project is gonna have those three things. The first one is the AI bid. The second one is the. Or my. Okay, the first one will be the. Oh, I just forgot what this."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "The general."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "No, no, no. What's the viewer called again? So the dicom viewer work that you did to make the DICOM thing happen. The second one is going to be the, I think to get the, the editing platform the course management, whatever. And the third one will be the AI work."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "I agree with that order too, because the AI work just started at the end of that year."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Yeah."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "So but the iteration could all have happened before that."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "And it's fine if it's a continuation or like you do similar work in the next year. That's like similar threads. But I'm sure the work that you're going to do is not going to be the same work like you're going to do stuff with AI or LLMs, but it's going to be probably divergent from like that core prompt engineering thing that you did. Right?"
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Yeah, exactly."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "So, yeah, I mean, I think it's a good project."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Yeah. And then I guess when it comes to like say the con, the expenditures were like only 43,000, for instance, in 20 that NPC for that year. It's still worth applying for and it's only contractor expenses. But like, would I also claim some of my own time as well, even though I didn't salary it and how would that benefit me? And then also in this coming year, it wouldn't impact my ability to then apply for a larger percentage of my own time, for instance. And then also any contractor expenditures?"
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Yeah, it just comes down to expenses. Like if you don't have expenses, you can't claim your time. So what I was saying is not like you're going to claim time that you didn't pay yourself for. It's more so that like you did the work and like the work wouldn't have happened without you, regardless whether you paid for it or not. So it's just part of, it's part of the technical story, it's not part of the expenses story."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "I see, right. The case, basically."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Yeah. So is it worth it? Yeah, I think it's worth it because I mean, we want your business, so we're down to do this even if it's like not the best arrangement for us if, you know, I mean, so we can like help you out in the long term. So I love what you're doing and like we want to, you know, make Canada a better country. So like this actually in my opinion, has impact. Because more doctors, right? More doctors is good."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Yeah, yeah, for sure. Thank you, man. I really appreciate that. And then hopefully next year will also be a bigger application. And also, I mean, I want to build the best one of these that's out there. And so hopefully, I mean, my number one customer is US based for sure. So that hopefully will continue to grow and we can fight back on these tariff. Exactly. We'll take care of Su."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "You should tell us as well."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "The biggest company in the space called MRI Online, and that's a US company and they're huge. But if I can do this well and like, grow it enough, I'll eat into that for sure. So."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Yeah, I think so too. And like, I don't. I think it looks lightweight and, like, it looks impressive. I think it's probably good course material, so. Should have no problem being super agile coming up against a behemoth like that."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "For sure. Looking forward to it. Cool."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Awesome. Great conversation, man. I gotta run to the bathroom before my next hour meetings, so. Yeah."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Thanks, man. Appreciate it."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "All right. I appreciate it as well. Take it easy."
+        },
+        {
+            "speaker_name": "Rajesh Bhayana",
+            "raw_text": "Bye."
+        }
+    ]
+}

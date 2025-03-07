@@ -3,10 +3,12 @@ import json
 import numpy as np
 from langchain.embeddings import OpenAIEmbeddings
 import os
+from dotenv import load_dotenv
 
+load_dotenv()
 # ---------------- AWS Configuration ------------------- #
-# AWS_ACCESS_KEY = "your-access-key"
-# AWS_SECRET_KEY = "your-secret-key"
+AWS_ACCESS_KEY = os.getenv('AWS_ACCESS_KEY_ID')
+AWS_SECRET_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
 # SOURCE_BUCKET = "your-source-bucket"
 # DEST_BUCKET = "your-destination-bucket"
 
@@ -16,11 +18,11 @@ import os
 #     aws_secret_access_key=AWS_SECRET_KEY
 # )
 
-# redis_client = redis.Redis(
-#     host="your-redis-endpoint",  # AWS ElastiCache Redis endpoint
-#     port=6379,  # Default Redis port
-#     decode_responses=True  # Ensures stored values are human-readable
-# )
+redis_client = redis.Redis(
+    host=clustercfg.vector-zerodraftai-collab-redis-vectordb.dkvbaf.memorydb.us-east-2.amazonaws.com
+    port=6379,
+    decode_responses=True  # Ensures stored values are human-readable
+)
 
 
 #redis_host =

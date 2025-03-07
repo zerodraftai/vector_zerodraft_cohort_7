@@ -1,0 +1,493 @@
+{
+    "title": "Technical Interview with Zero Draft AI between zerodraft and Ahmed Khanani",
+    "transcript": [
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "Hello, Ben. Sorry about that. I had to keep you waiting. I just. Trying to get rid of this one. Client called."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "How you doing?"
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "I'm doing well. I'm doing well. Just, you know, been snowed in, playing a lot of sports. Just. It's been good, man. Awesome."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Happy to hear. How about you? Yeah, I'm like, doing pretty well. I think I'm gonna start to probably very busy week. We'll see. But yeah, sorry."
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "Sorry for pushing these meetings again and again. No worries. But just as a heads up, how much time do you want generally for this meeting?"
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "It depends. I mean, like, we might need the full hour depending on how far we get and so on, but. Excuse me. It's by no means like."
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "That's fine. I. I can. I can dedicate that. I can dedicate the right time, to be honest. And obviously, like, I'll. I'll take my notes to see what other information I can provide you at the ease of just like loom videos, resources and like, even having my. My technical guys just like sending over whatever details they need to send. So, yeah, we can get started, no problem."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Okay, great. So last time we spoke, I don't know, it feels like a month or two ago."
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "It was a month ago. Yeah."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "So I don't really recall. Like, can you just, like, update me? Like, just give me a quick rundown of your business where you work, like."
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "So my company, this company is called Potent Digital. It started operations in 2023, July, but only did like one or two projects on the side. I was at another company before, which called Purpose Path. That was my other company. Then I branched out because I had a fallout with my business partner. Him and I both. Then he kept the business. I just. I told him to keep it and I moved on to the new business called POTUS. Digital went into full public operations in April 2024. From April 2024 to December 2024, we basically did our digital marketing, website app solutions we did in digital marketing side, we were doing SEO, ads, content creation, website development. From the software side, we were doing small app development, web app development, and then for. From the perspective of video production, we're just doing small jobs like covering events and stuff like that. So that was our overall, I guess, line of work. I think the revenue was around 450 to 500,000. I think it's probably going to be reported as $400,000 for the year. The only payroll staff member was me. The others are all subcontractors. Some. Some here, some outside, most outside the country. Okay. My My salary that I was reporting was, is going to be again I'm going to keep it at the low threshold just for the first year tax, tax sake. It's probably going to be close to 50 grand in salary this year, although it's going to be a bit different. I'm hoping to get to 1.2 million in revenue and I will have on payroll probably three members over here alongside with me. So the staff payroll can go up to maybe 130, 150 potentially. Okay, yeah, that's basically the spiel of it in from. I'll let you detail what's next."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "So, okay, so just so I get it straight, you're operating like and I looked at your website, obviously you're operating as a dev shop, correct?"
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "Yes, marketing and a dev shop. So there's also the marketing aspect is more of a revenue generated at this point in comparison to dev. But this year is where we go more on dev."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Right. And then just so I, I remember correctly, you're like a buddy of David's, right? Yes. Yeah. Okay, cool, great. So we can probably jump in, just get started. Point of this call is to like suss out the technical work, make sure everything like, you know, what, what did you work on? Like what is shred eligible, what isn't? You know, like what do we do? We have a claim basically and then like to be honest, I'm not saying like it's not a fit or whatever, but generally dev shops are looked, looked down upon by cra just warning you. Like I think, I think we did make that clear before as well."
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "But that's why my dev shop is not really that shop. It's more like a marketing consultancy as well. So most of our projects can become a bit more, I guess consulting based and specialized towards a specific client requirement. Who wants to innovate on a digital. From a digital perspective."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "I think I hear you."
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "Supportive case, right, where we research and come up with a solution or."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "No, it depends."
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "Okay."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "I need to, I need to find, figure out a little bit more. The reason I say it depends is like actually made it might from like depending on how what you're describing might make it worse. But whatever that, yeah like the point. I'm not trying to. Whatever, that's fine. Make you anxious or whatever. Just, just. Yeah, just to be straight up about the risks and so on. So there's certain kinds of work that like do not count in like CRA's definition of eligibility and whatever. Like for example, they don't love UI work or like ux work. So if it's like, okay, and like obviously marketing stuff is not related or eligible to SHRED for the purposes of like anything actually. Yeah. Now you could have like people on payroll that are doing that. I know that's not the case as well because it's just you. So whatever. Okay, so what, what is the definition of a technical shred eligible project? Right. This is the most important thing to kind of go through. First of all, you had like a technical, like this is the definition. You, you start off with like a technological problem that can't be solved with like a traditional technological solution that like exists either in market or like you can't buy it. It's not something obvious that you can make. So certain things are obvious but like it's not. That's just not the case here. Does that make sense? So like you run into this technological problem, this is where shred starts. What happens next is you make a hypothesis, a prototype. You like, once you prototype the solution, you test it and you have some sort of test results. So for example, for like a non technological, like non Internet business, let's say you're a bakery and you're making a bread, but you want to make a gluten free bread. So there's not a really obvious way of how you can make that gluten free bread while maintaining the same taste profile. Right. So you needed to undergo R and D. Yep. Right. So you make some sort of prototype recipe. You have like a test result of like you're testing this recipe against what, what are your like normal taste profile, whatever that, that stuff. Once you have that, that actually counts as R and D. Regardless of whether you made your bread taste like, you know, gluten free or like gluten free bread tastes the same. Doesn't matter. What matters is you underwent this process. Cool. Does that make sense? Like I'm like I'm calling you. Yeah, everything is clear. Okay, cool. So typically in a dev shop it's going to be like do you build any internal products or do you have like. Okay, sorry, one other thing. So like internal products are fine. The other kind of like main risk definition for shred is that you need to be getting the upside or like you need to be taking technical risk and benefiting from the the work done. So like let's say you like I hired you and I'm like, build me the scope and like you're running into all these technological problems, you know, you're undergoing shred and so on. Really, it could still be eligible or not Eligible depending on like your contract and like how you're taking the technical risks. Okay, so all I mean by that is. Yeah, like depending on the contract, if you have no right to the ip, there's a chance that it's not an eligible project. Does that make sense? No."
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "So you see, I'm, I'm aware about what Shrek can cover and what it cannot."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Okay, sorry."
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "Yeah, I filed them before twice. Right. So I was based on the exact same agency model, no questions asked. I'm sure first two, three years of the business is easy. After that, if you go with the same copy paste model, they might eventually reject some stuff, which is understandable. Right. Because I don't do any revolutionary work at this point. Eventually I will be. But at this point we don't. But rest assured, like you know, we will go in that direction because we will build internal products, we will build heavy research based items. We will eventually do that and we're on track to do that within this year, not last year. So. Okay, in all fairness, the first time that I filed it, it was straightforward. Four or five questions. We filled them up, we gave them the references and I was able to get my, get my shred. It was pretty easy process. I understand you're explaining it to me, but I've done it before. I know what works. I know I can get the claim in. I have the references, I have the resources. I know I just have to provide the technical guidance and I can write them down and provide them for you. It's a simple submission from what I imagine. Now again, your company offers a different service or style of service as compared to the previous guy I worked with. It was just straightforward. Here's a word, Doc, here's the four answers I need, the rest I'll take care of. It was very easy for me. I gave him 25, 22.5% of that. That's why it, that's why it, it."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Worked at that point."
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "But then David came to me with a better offer saying we'll be able to undercut that significantly. That's where I am."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Yep, 22 and a half is a lot. That's like very."
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "It is, which is why, which is why I said yes to David. No fair, like otherwise. See if I, if I'm, I'm. If I'm registering this as the first time with this new company. Right. Higher chance there's not going to be many questions asked. It's a new company, we have the revenue, we have the contract, we have everything in place. So I'm not worried about that. Down the road, two, three years later, I was being told that it would make sense because why would this company not do anything innovative and still get like, you know, shreds again and again? So it all makes sense. But I think as a new company, I think it should be all doable. Again, you're the professional, you might know better. So I'm actually thankful that you're providing me information clear cut, so that expectations are set from the ground up. So I do respect that. But I know based on past experience, having done this before, it's just super, super straightforward for the first time. So that's why I'm just looking for at this point."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Yeah. So one, one thing I will say I'm happy that that was your experience. Did you file during COVID."
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "Well, it was 2023, so."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Okay, so it's a little after."
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "Yeah, yeah. Okay."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Yeah. The reason I'm asking is just like, yeah, you know, your mileage may vary. You may or may not get a review. If you went through a review and you got through it, awesome. But yeah, it sounds like you just, it was like a slam dunk. Like you never got the review in the first place. Right. Like you just submitted and they're like, okay, accept it as filed."
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "Right, Right."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Yeah, yeah. So, yeah, that's like, that's like my only gripe is that we. There's a portion of what we do is the audit prep and like, you know, making sure everything is like perfect that you know, it'll go through with no, no problems. Like, sorry, once it goes through and that we encounter the problems, we'll actually have no problems. You know what I mean? Anyway, sorry. So I just. We try to do as much to de risk the claim because we're as invested as you are in getting the money and like if we submit like a shitty claim and you don't get the money, we're not getting paid. So it's just like staring in the risk, sharing the reward, whatever. Okay, so take me to the start. When does your, when does your fiscal year end?"
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "December20."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "So, so, and then this is the first year that you're operating in this company, right? Or did you do two years?"
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "First year, the company was rejected in 2023, but went into public operation 2024."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Okay, so you don't have any payroll for the 2023 year?"
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "No. Okay, perfect."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "So in 2024, I guess January 1st. So what we're going to look at is from January 1st till the end of the year, what did you Work on what were the major things. So usually I ask where was the state of your technology internally? Because you're building an internal product. So just to be clear, you don't have any internal products now. It's on plan for the roadmap for the next year. But you only did client work in that year, Right?"
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "We have some internal products. This product called Taverna, it's a restaurant solutions app. It's live, it's updated, it's a web application. So we built that internally within 2024."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Okay, and then when did you start?"
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "I would say probably November or December 2023."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Okay. So safe to say we could, we could just treat it as like January, right? Like say, okay, whatever, for the purpose of this project. So what was the state of the technology in January? Probably nothing."
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "Right."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "You probably just had some proof of concepts like specs, correct?"
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "Yeah."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Right. Okay. And then you're still working on this product."
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "Yep."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Okay, so what did you get up to, like at the end of the year, you know, December 31st, what did your product look like? What does it do? Can you tell me something?"
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "It's a near finished product. It's a near finished product. It has everything working now we're just working on some new features to add as we got feedback from restaurants. So now we're working on those for the next one to two months and then we try to go to market with that product."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Great. And then just so I get a picture of the other stuff, like, did you have any clients during that year that were like, you know, higher level of technology, things that were harder, you know, shredder, more shreddable projects?"
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "Honestly, like in terms of shreddable products, I would say we had like a lot of websites that we built on WordPress, Shopify, we, we worked, I guess we, we built mobile apps and web apps, but they were for US based clients, not for Canadian. That's fine too. So we built a mobile app for a client out of New York on iOS and Android. We have a web app built on React and. Sorry, one on. Net. And then the internal Proctaverna, the one I'm talking about, was built on React. Okay."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "And then do you have a website?"
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "Yeah, tavernaos.com."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Okay, great. Okay, so, okay, so first, first thing I think, like, what is, what is a restaurant OS app? Like? Okay, so in my opinion there's probably not a lot like, and I'm not trying to be adversarial at all just to be upfront about it, but like, to me, a lot of the Things in the restaurant app are probably things that are like, you know, if you need a database, you need UXS or, like, user interfaces, you need, like, all of the, like, I don't know, 10 management, tracking. Yeah, I see that a lot. Like an integrated dashboard. These are not, like, these are just routine kind of engineering things. So what we're looking for is, like, what is the spice? Like, Kind of brought them to the level of, like, not being a routine solution. Right. So two ways we can go about it. We can talk about individual features that you think are, like, that were the hardest to implement. And like, sorry, were you, Were you central to the development process? Like, you're running everything, right?"
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "Yeah, pretty much. Okay."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "So we can either talk about, like, features, roadmap, like, milestones that you went through, or, you know, you can directly tell me certain problems if you're like, you know, you have the experience of shred. But I guess, yeah, like at the end of Q1, let's say, like, by March, where. Where were you at with the products."
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "The design concepts? Already? The back end dashboard was, I guess, in the works where we had the QR code generator software that we were working on that was. That worked. That basically said as a unique QR code for every specific table. So we had that. Yeah. And then the innovative part about that was that if you. If a customer scans a QR code, a diner scans that QR code, they will be able to, I guess they have access to that specific table's menu dashboard and be able to place orders or requests in the same cutlery, napkin, water, whatever they want. And the dashboard on the restaurant server side would know exactly that. These are the requests for table number one, and they will be able to serve that table accordingly."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "I got it. Do you have, like a demo or something that I can see? Like, can you quickly."
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "Video demo is in the works right now, so I don't have that. But I can eventually send you a loom video and show you how it works."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Yeah, loom video would be great. It's just like, you know, I can think of some other things, so the main thing that kind of jumps up. Okay, so are there hardware? Like, what kind of hardware do you interface with?"
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "We don't have hardware. We just have them to be able to download the app that we will build or the web app accessible through. Through mobile."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "So. So, all right, just like in my standard under, like in my understanding of how like, a restaurant works is like, I place an order, it's going to be sent to a ticket that goes to the kitchen. Right. Like they have this like ticket slider thing or like an iPad or something. Right. Do you have anything like that? Like how does. Okay, if I place an order, can you walk me through? Like when I place an order, how does it actually get it fulfilled or implemented or whatever?"
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "See, like in, in regards to a hardware, we don't have that because like that's not something that we want to work. We're just as a software based idea only. We are able to just integrate onto people's browsers so they're easily able to access it eventually. Our plan was to have a mobile app or a tablet app that could be working on their. Any term, any POS systems that they use. Like they're usually tablet facing which can download the apps, but we just like an add on on top of the existing pos, but not a replacement for it. So giving that. Still working on hardware wasn't really our goal."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Okay, so I got it. So since on top of your pos, it doesn't actually integrate and route to like the ticket printer, for example, but it's a really easy interface. Like I, I, as a restaurant person, I'm the frontman. I get like, I have like my iPad or whatever. I have the web app running on there. When someone orders, like, I'll get a notification to pop up or something. Right. And then my job is to punch it into the like ticketing system or like. Yeah. Am I right? Like roughly."
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "That's correct. Okay."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "And then did you, when I send."
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "You the demo, you'll be able to see it? Yeah, we introduced stripe to it. Okay. Yeah, we introduced Stripe. I'll send you the entire demo that we have so far. You can take, you can have better understanding from that."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Great. And then. Yeah, so basically once I'm done the meal, I can just scan the QR code on the receipt or on the table and I can just be like pay now and boom. Right."
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "So that's the feature which is still pending. The payment is for the again for the restaurant owners to subscribe for their monthly subscriptions right now. Okay."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "And do you have any customers in. In this, in the previous year for this, paying customers?"
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "No, we had definite customers who were trying the product to give us feedback. Gotcha. Okay."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "So yeah. Can you tell me what were some technical challenges? Just things that were hard to implement. Like your team had trouble on or like. Yeah, just. Was there anything like that?"
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "Session timeouts. If one guy is done eating his meal and the next customer needs to come in, how to make sure that the session is going to be timed out every time. How does the customer, how does the restaurant ensure that that QR code is refreshed for a new customer every time? Those are the different things because we don't want any person who has the previous QR code link when they're done, they're dining to be able to re access the existing link and then be able to mess around or do anything with the existing customers. QR code dashboard. So that's basically, that's basically what I would say was one of, one of a, one of the challenges because okay, again as a customer, I don't want someone else to have the same link as I have. So creating a unique link and a refresher every time that allows the users to have an expired session once they've left."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Okay, so when, when you started, I assume you made a prototype? You know, I scan a QR code, it takes me to some like object or like some store that basically says here, here's everything going on with the table, here's the open balance, you know, order stuff, whatever you want. Right now problem is basically like if I pay and then leave, I actually still have access to that section on my browser, like on my phone. Right. So now when the next table comes in, they're dining at a table, I can actually be ordering stuff for them. Is that right?"
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "Yeah, you, you could have, but we have to work on a solution which was obviously disabling that and that's what we did."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Right. So that was the problem. And now."
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "Yeah."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "How did you, like, what did you actually do to overcome the problem?"
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "Well, we, we tried to find some third party integrations which allow like, you know, session timeouts."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Did you find any?"
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "Yeah, we did. I don't have the name of it or I can just ask my deaf to give it to me. But yeah, like we've been able to resolve that problem."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "So basically you found an off the shelf solution, it fixed your issue."
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "Yeah, obviously with our own bit of customization to it, ensure it meets the standards that we need to do it. But yeah, like the solution is there."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Okay, so what was the extra stuff? Like what, what was not adequate in that off the shelf solution for you? Or is it just like a matter of like you need to integrate it?"
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "Honestly, matter of integration as well for integrating it. Nothing, nothing else, I would say."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Okay, so you have this problem, you integrated this thing, problem solved. Right. All right, great. Is there any other kind of like main features or roadblocks in the development that you went through?"
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "Roadblocks aside from that? No, I think just more adding, adding some features which took some time and didn't have to obviously do some research for it and how that's going to work. So for example, we made our own Link 3 solution. Rather than integrating Link 3 as a, or like a LinkedIn bio solution, we included a marketing gimmick where restaurants have, on the back end they can go and add as many links as they want and that can be available on the front facing dashboard for the customers. Basically you can add 10, 20 links of your, all your bios. You can have a text space or you can add your website links, anything which allows you to send them. Okay. Here, once you are on the, on the dashboard as a customer, you are placing a request to get some water on the top, right. You can click and see the links that are available. And in that you can have, let's say leave a Google review, you can have your Instagram. So we didn't use out of the box solution. We actually just built that ourselves. I think that was just to prevent us from using too many third party solutions. We were just like trying to build some of our own and I think that was a good success."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Okay, and then that's not just in app experience, right? Like if I'm a restaurant, I have Instagram, like I'm able to put that in my Instagram too. And then like they're able to access like that link tree or is that not correct? Okay, and then do you have like table reservation ability?"
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "Not yet, no. It's in the pipeline."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Yeah, but is that something that you were working on or ide in the last."
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "We've been ideating it. Yeah, we've been ideating it for short. But we obviously like any product, we don't want it to be feature heavy until. Unless you have market validation. So that's why. Yeah, we haven't indicated all those."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "I'm just thinking like, okay, why didn't you just use link tree? Okay, link tree. Probably, you know, you didn't want to pay the pricing and whatever. But also you wanted like a more holistic app experience. Right. So like for example, if I'm going to open your Instagram and get to your restaurant, I should be able to reserve a table there, right? Because."
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "Yeah, so because there are other like you or they can even link their open table or any other link that they have of their restaurant, they can have that. So any kind of link can go there, including their own. Maybe they have the other company's reservation system that they want to use resi or whatever. Like that's all possible with that, with that link. Okay."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "What was the hardest thing about making that link or that page or whatever, this feature?"
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "I don't think I have a sensible answer for that on my end. I have to ask my dev again for that. Okay. Give you a sensible answer. Just so that you can have something go through in comparison. We'll be just repeating the same things again. I'll have a better answer for you on that."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Okay. One of the things I see is data tracking, time management, efficient tracking, activity logs. Can you tell me a little bit about that?"
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "We have an analytics dashboard on our app which basically shows number of requests completed by different staff members. It shows how many requests have come in. So it's basically a way for decision making for restaurant owners. That's what we did. So it has like an interface which shows up to four to five different statistics. We obviously want to embed more. Our initial challenge was that. Our initial challenge was just understanding firstly which stats matter to the restaurants most. And as we were getting the answers for that, we tried to figure out, okay, how do we pull that data and make sure it's accurate? So because like, you know, because we have. So we can add servers in that and then servers get tagged onto the requests that are coming in of from the customers. And then once they completed, they have to mark it as complete, which then gets timed, it racks up on the numbers. So there's like, it's basically a lot of query generation for us, I think just like figuring that part out was a bit of a challenge. And it takes some time to like make sure that you get it right. Eventually we got it right. And now the way that part works is you as you can add up to, let's say X number of servers. Each server can assign themselves to the request generated by X tables. And then as they completed their market as complete, the dashboard tracks the time to completion, whether it went overdue or it was done on time. Who was the staff who actually completed most of the requests. And eventually in the pipeline, we're idealing that right now. But the goal is to have AI giving recommendations based on this data that, okay, this is a staff member that needs more training. Or based on the layout of your restaurant, let's say you have tables sequenced from 1 to 15, first five are the front, second fiber there. But most of the customers don't prefer the front tables and they're going at the back. So how can you adjust your layouts of the restaurant table so that those are the things that we're able to come up with as answers. Similarly, another problem solved would be if most of the customers are requesting water as soon as they enter. And that was another general practice being done by the restaurant who offer water immediately or just placing the water up front. And the AI recommends you that, okay, how about you just keep the water buzz on the table beforehand? Even when you're seeing the customer this way, the experience is like, you know, you, you, you possibly prevent 20 to 30 requests coming every hour, and it just increases efficiency. So that's what we're doing."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Yeah, yeah, gotcha. So I get it. I get what you're saying. That AI analysis probably, like, had you started on it at all? Did you make any prototypes or is that more an."
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "Well, I would say we have started working on it, but I can't show anything for it."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "When did you. When did you start working on it?"
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "I would say about November of last year. And this process takes time because obviously it's an internal product, so we haven't been able to prioritize too much time. But, yeah, you can see November 2020."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Yeah, no worries. Like, we're not claiming millions of dollars, we're just claiming your salary. So that's perfect. Yeah. Yeah. You mentioned there's like four to five statistics that you're showing. What, what kind of things are those?"
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "Number of requests done on time versus not done on time. Staff members. Who. Which staff members went under were underperforming based on number of requests not close on time. Okay. And. And what else? Basically, best performer. So are the staff members who are there. Who. Who is completing the most. My request and how much time. And then which are the requests that come in the most from the customers? And I think it's just. There's like two, three more. I can, I can name them afterwards."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Okay, great. I think it's a good feature and I think. I think it's."
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "Yeah, I'm honestly, like, I'm happy about the product. Like, this is an idea that came to me in Jan. Of 2024 when I was at a restaurant. It's kind of frustrated with the experience there, so I decided to make a product out of it. That's typically how we're following future work as well. As we internally, as we see and discuss problems, we decide whether every quarter we take on a challenge of a new product. Looking towards that. Okay."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Are there any other things that were in this app that we didn't mention that were, like, main features or, like, main areas of, like, Technical like iteration or problems or whatever."
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "I think this should be. This should be, this should be. So far, if I can think of some stuff, I will definitely keep in the loop for that. But from now, from what I remember, this might be. This might be the most amount of stuff."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Okay, so we talk about session handling and timeouts. We talked about building a tracking management and operation recommendation system. Honestly, that might be enough to write a report, but I think it's a little weak. But hey man, we can send it and see what happens. But yeah, I guess difficulty on my side is just."
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "That's fine. You can. I guess what you can do is you can write the stuff down, send over to me, let me review it as well. Just come back to you with what I feel it could have more information of and you can take it from there."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Yeah, just. Just while I have you here, I'd love to I guess think like, are there any similar challenges that you went through working on other client work through the year that were like, you know, have overlap with either session stuff or."
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "Honestly, based on, based on what I've told you, that would be the best technical case from a client perspective. Honestly, like as you mentioned, you're. You're not as bullish on the idea of UI and stuff. So we had some clients we worked on for Word Person, Shopify project. There was one client out in Austin that we did a Shopify project for. Was quite technical. You were trying to build a lot of different functionalities for it. I can provide you all those details via Loom video."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Yeah, yeah, it's something which can hold. Yeah. If we're not focusing on those projects. Sorry, do you have to go like, you have like some."
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "Yeah, that's what I was gonna say. I've been getting a lot of like annoying messages from the back. So I was seeing my. A bit of my attention. There's a problem with one of the dev products that we are working on. So I think I may have to like."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "Yeah, okay. Yeah, if you gotta go, you gotta go. Last thing I'll say is like, it's not that I'm like not bullish on UI UX work, it's just that like cra. In the event of her. Yeah, they're the ones like I actually disagree. I don't think. Yeah, okay, whatever. Great Ahmed. I'm gonna do like a preliminary write up for this. I'm gonna do my best to make it strong. There are a lot of risks obviously attached to this. It feels a little weak, but. Hey man, like let me do my best to make it stronger. I'll ask you for some feedback and, like, some, you know, things to bolster the facts, build documentation, and, you know, we should have a, you know, decently strong case."
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "Absolutely."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "All right."
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "Absolutely."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "I appreciate that. Thank you very much. All right, well, take it easy, man. We'll be in touch."
+        },
+        {
+            "speaker_name": "Ahmed Khanani",
+            "raw_text": "Sounds good. Thank you. Bye."
+        },
+        {
+            "speaker_name": "Benjamin Dryden",
+            "raw_text": "All right, bye."
+        }
+    ]
+}
