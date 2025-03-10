@@ -1,2 +1,6 @@
 redis
 boto3
+nltk
+openai
+numpy
+dotenv
