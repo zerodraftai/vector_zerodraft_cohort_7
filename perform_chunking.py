@@ -50,11 +50,11 @@ def read_input_text_from_s3(s3_client,bucket_name, file_key):
     response = s3_client.get_object(Bucket=bucket_name, Key=file_key)
     return response['Body'].read().decode('utf-8')
 
-long_text = """I recently purchased this laptop, and I must say, it’s an excellent choice for both work and gaming.
-The battery life is impressive, lasting nearly 10 hours on a single charge. The keyboard feels premium, and the screen resolution is crisp.
-However, I did face some minor issues with the touchpad being a bit unresponsive at times. Overall, it's a solid device and well worth the price.
-The sound quality is also fantastic, providing a deep bass experience. But the fan noise can get quite loud under heavy loads, which is a little annoying.
-Customer support was helpful when I needed assistance with initial setup. I'd recommend this laptop to anyone looking for a powerful and affordable machine."""
+# long_text = """I recently purchased this laptop, and I must say, it’s an excellent choice for both work and gaming.
+# The battery life is impressive, lasting nearly 10 hours on a single charge. The keyboard feels premium, and the screen resolution is crisp.
+# However, I did face some minor issues with the touchpad being a bit unresponsive at times. Overall, it's a solid device and well worth the price.
+# The sound quality is also fantastic, providing a deep bass experience. But the fan noise can get quite loud under heavy loads, which is a little annoying.
+# Customer support was helpful when I needed assistance with initial setup. I'd recommend this laptop to anyone looking for a powerful and affordable machine."""
 
 
 def perform_chunking_main(s3_client,aws_s3_bucket, input_text_file_key,output_chunk_file_key,chunking_type,chunk_size=500):
