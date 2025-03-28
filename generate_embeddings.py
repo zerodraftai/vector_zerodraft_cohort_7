@@ -14,43 +14,50 @@ def read_chunks_from_s3(s3_client,bucket_name,file_key):
     response = s3_client.get_object(Bucket=bucket_name, Key=file_key)
     chunked_text = response["Body"].read().decode("utf-8")
     chunks = json.loads(chunked_text)
-    return chunks
+    chunks_dict = {}
+    chunks_dict = {f"chunk_{i}": chunk for i, chunk in enumerate(chunks)}
+    return chunks_dict
 
-def embed_chunks(vector_index_value,openai_api_client,chunks,model = 'text-embedding-ada-002'):
+def embed_chunks(vector_index_value,openai_api_client,chunks_dict,model = 'text-embedding-ada-002'):
     embeddings = {}
-    for i,chunk in enumerate(chunks):
+    for chunk_index,chunk_value in chunks_dict.items():
         response = openai_api_client.embeddings.create(
-            input=chunk,
+            input=chunk_value,
             model=model
         )
         # import pdb;pdb.set_trace()
-        embeddings[f"chunk_{vector_index_value}:{i}"] = response.data[0].embedding
+        embeddings[chunk_index] = response.data[0].embedding
+    # import pdb;pdb.set_trace()
     return embeddings
 
-def store_embeddings_in_redis(embeddings,redis_client):
-    for key, embedding in embeddings.items():
+def store_embeddings_in_redis(embeddings, chunks_dict,redis_client, vector_index_name):
+    for chunk_index, embedding in embeddings.items():
+        redis_key = f"embedding:{chunk_index}"
+
         redis_client.hset(
-            key,
-            mapping={"vector": np.array(embedding).tobytes()}
+            redis_key,
+            mapping={"embedding": np.array(embedding, dtype=np.float32).tobytes(),
+                     "text": chunks_dict[chunk_index]}
         )
-    # for key, embedding in embeddings.items():
-    #     print (key)
-    #     redis_client.set(key, json.dumps(embedding))
+
+    print(f"Stored {len(embeddings)} vectors in Redis under the '{vector_index_name}' index.")
+
+
 
 def generate_and_store_embeddings_main(s3_client,aws_s3_bucket,s3_file_key,redis_client,openai_api_client,vector_index_value):
     try:
-        chunks = read_chunks_from_s3(s3_client,aws_s3_bucket,s3_file_key)
+        chunks_dict = read_chunks_from_s3(s3_client,aws_s3_bucket,s3_file_key)
     except Exception as e:
         print ("The function read_chunks_from_s3 failed due to ", e)
-        # import pdb;pdb.set_trace()
+
     try:
-        embeddings = embed_chunks(vector_index_value,openai_api_client,chunks)
+        embeddings = embed_chunks(vector_index_value,openai_api_client,chunks_dict)
     except Exception as e:
         print ("The function embed_chunks failed due to ", e)
-        # import pdb;pdb.set_trace()
+
     # import pdb;pdb.set_trace()
     try:
-        store_embeddings_in_redis(embeddings,redis_client)
+        store_embeddings_in_redis(embeddings,chunks_dict,redis_client,vector_index_value)
     except Exception as e:
         print ("The function store_embeddings_in_redis failed due to ", e)
 

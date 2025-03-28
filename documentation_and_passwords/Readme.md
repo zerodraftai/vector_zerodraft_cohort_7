@@ -12,5 +12,19 @@ sudo systemctl enable redis-proxy
 sudo systemctl start redis-proxy
 sudo systemctl status redis-proxy
 
-Location of the redis-proxy service:
-sudo nano /etc/systemd/system/redis-proxy.service
+Location of the redis-proxy service:sudo nano /etc/systemd/system/redis-proxy.service
+
+
+Removing the vectors present in the redis vector db:
+redis-cli -h clustercfg.vector-zerodraftai-redis-vectordb.dkvbaf.memorydb.us-east-2.amazonaws.com -p 6379 -a <password> FLUSHALL
+
+Things to do
+#implement mlflow and langsmith to log artifacts and experiments and even results.
+#implement evaluation metrics for the models
+#   - meteor score
+#   - llm as a judge
+
+postgres creds
+postgres, postrgres
+postgres endpoint
+database-1.cp08y8cawkhj.us-east-2.rds.amazonaws.com
