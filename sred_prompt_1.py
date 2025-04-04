@@ -31,7 +31,7 @@ def call_openai_api(prompt, model="gpt-4", temperature=0.7):
     )
     return response.choices[0].message.content
 
-def generate_sred_report(company_name, project_description):
+def generate_sred_report(project_description):
     # Step 1: Identify project candidates
     prompt_candidates = f"""
     {guideline_text['candidates_guideline']}
@@ -40,7 +40,7 @@ def generate_sred_report(company_name, project_description):
     Identify and return JSON-formatted project groups.
     """
     project_candidates = call_openai_api(prompt_candidates)
-    print("Project Candidates:\n", project_candidates)
+    # print("Project Candidates:\n", project_candidates)
 
     # Step 2: Generate technological uncertainties
     prompt_uncertainties = f"""
@@ -50,7 +50,7 @@ def generate_sred_report(company_name, project_description):
     Generate the technological uncertainties.
     """
     uncertainties = call_openai_api(prompt_uncertainties)
-    print("Technological Uncertainties:\n", uncertainties)
+    # print("Technological Uncertainties:\n", uncertainties)
 
     # Step 3: Generate work done
     prompt_work_done = f"""
@@ -60,7 +60,7 @@ def generate_sred_report(company_name, project_description):
     Generate the work done in response to these uncertainties.
     """
     work_done = call_openai_api(prompt_work_done)
-    print("Work Done:\n", work_done)
+    # print("Work Done:\n", work_done)
 
     # Step 4: Generate technological advancements
     prompt_advancements = f"""
@@ -70,7 +70,7 @@ def generate_sred_report(company_name, project_description):
     Generate the technological advancements achieved.
     """
     advancements = call_openai_api(prompt_advancements)
-    print("Technological Advancements:\n", advancements)
+    # print("Technological Advancements:\n", advancements)
 
     return {
         "project_candidates": project_candidates,

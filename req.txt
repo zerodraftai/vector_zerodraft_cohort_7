@@ -4,3 +4,4 @@ nltk
 openai
 numpy
 dotenv
+redis
