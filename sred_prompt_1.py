@@ -1,7 +1,7 @@
 import openai
 
 guideline_text = {}
-
+x = 5
 guideline_text["candidates_guideline"] = """ Given a list of threads(uncertainties) and their evaluations, identify which threads are candidates for a SR&ED project and group them, ensure that each group of threads(uncertainties) is sufficiently strong enough for a SR&ED project.
 Ideally no less than 3 threads per project. Return groups of threads that would make the strongest project claims with a project title, project description, and project thread ids. If there is not enough thread information to make multiple projects, return one project with all the threads.
 Only return a single JSON object with an array of projects. Each project should have a title, description, and thread_ids, which is a list of the associated thread ids.
