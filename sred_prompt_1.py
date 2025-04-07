@@ -6,10 +6,41 @@ guideline_text = {}
 # GUIDELINES & SAMPLES
 # -----------------------------------------
 
-guideline_text["candidates_guideline"] = """ Given a list of threads(uncertainties) and their evaluations, identify which threads are candidates for a SR&ED project and group them, ensure that each group of threads(uncertainties) is sufficiently strong enough for a SR&ED project. 
-ideally no less than 3 threads per project. Return groups of threads that would make the strongest project claims with a project title, project description, and project thread ids. If there is not enough thread information to make multiple projects, return one project with all the threads.
-Only return a single JSON object with an array of projects. Each project should have a title, description, and thread_ids, which is a list of the associated thread ids.
+guideline_text["candidates_guideline"] = """
+You are given a set of threads (technological or scientific uncertainties) along with their evaluations. Your task is to group these threads into one or more SR&ED project(s). Each SR&ED project must:
+
+1. Contain at least three threads, if possible.
+2. Have a clear, cohesive technological objective tying the threads together.
+3. If there are insufficient threads to form multiple distinct projects, place them all into one project.
+
+Return your results as a single JSON object containing an array called "projects".  
+Each element in "projects" must be an object with exactly three keys:
+- "title": A concise, descriptive title for the project.
+- "description": A brief summary (1–2 sentences) explaining the common SR&ED focus.
+- "thread_ids": A list of the thread IDs included in the project.
+
+**Important**:  
+- Do not include any explanation, commentary, or extra text outside of the JSON object.  
+- Only produce valid JSON.
+
+**Example JSON output**:
+
+{
+  "projects": [
+    {
+      "title": "High-Precision Sensor Calibration Project",
+      "description": "A set of SR&ED activities aiming to reduce sensor noise and improve calibration techniques.",
+      "thread_ids": [1, 3, 5]
+    },
+    {
+      "title": "Advanced Data Processing Pipeline",
+      "description": "Work on new algorithms and data structures to handle large-scale streaming data in real time.",
+      "thread_ids": [2, 4, 6]
+    }
+  ]
+}
 """
+
 
 guideline_text["part_1"] = """
 You are a SR&ED consultant and writer. Given the provided uncertainties and context, write the "Technological Uncertainty" portion for Section B Project descriptions
