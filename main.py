@@ -4,13 +4,14 @@ from rag_pipeline_to_generate_proj_description import rag_pipeline_main
 from sred_prompt_1 import generate_sred_report
 from retrieve_company_and_project_name import extract_company_and_project
 from evaluate_sred_report import evaluate_sred_report_main
+from helper_function import write_input_text_file_to_s3
 import streamlit as st
 import os
 import boto3
 from openai import OpenAI
 import json
 import redis
-def main():
+def main(input_transcripts_text,input_file_name):
 
     # ---------------- AWS Configuration ------------------- #
     AWS_ACCESS_KEY = os.getenv('AWS_ACCESS_KEY_ID')
@@ -33,17 +34,7 @@ def main():
         ssl=False
     )
     vector_index_value = 'my_vector_index_4'
-    # def create_vector_index(redis_client,vector_index_value):
-    #     redis_client.execute_command(
-    #         "FT.CREATE", vector_index_value, "ON", "HASH",
-    #         "PREFIX", "1", "embedding:",
-    #         "SCHEMA",
-    #         "vector", "VECTOR", "FLAT", "6", "TYPE", "FLOAT32", "DIM", "1536",  # Set your embedding dimension
-    #         "DISTANCE_METRIC", "COSINE"
-    #     )
-    def read_input_text_from_s3(s3_client,bucket_name, file_key):
-        response = s3_client.get_object(Bucket=bucket_name, Key=file_key)
-        return response['Body'].read().decode('utf-8')
+
     def create_vector_index(redis_client, vector_index_name, embedding_dim=1536):
         existing_indexes = redis_client.execute_command("FT._LIST")
 
@@ -83,7 +74,7 @@ def main():
     openai_api_key = os.getenv("OPENAI_API_KEY")
     openai_api_client = OpenAI(api_key=openai_api_key)
     # OPENAI_API_KEY=os.getenv("OPENAI_API_KEY")
-    input_text_file_key = 'Input_data/transcript_sample_1.json'
+    input_text_file_key = 'Input_data/{input_file_name}'
     output_chunk_file_key = f"Chunks/{input_text_file_key.split('/')[-1].replace('.txt', '_chunks.json')}"
     # print (input_chunk_file_key)
     # try:
@@ -99,11 +90,11 @@ def main():
     # except Exception as e:
     #     print ("The function generate_and_store_embeddings_main failed due to ", e)
     #     import pdb;pdb.set_trace()
-    try:
-        input_transcripts_text = read_input_text_from_s3(s3_client,aws_s3_bucket,input_text_file_key)
-    except Exception as e:
-        print ("The function read_input_text_from_s3 failed due to ", e)
-        import pdb;pdb.set_trace()
+    # try:
+    #     input_transcripts_text = read_input_text_from_s3(s3_client,aws_s3_bucket,input_text_file_key)
+    # except Exception as e:
+    #     print ("The function read_input_text_from_s3 failed due to ", e)
+    #     import pdb;pdb.set_trace()
     try:
         print ("Running RAG pipeline...")
         top_20_summarised_proj_desc = rag_pipeline_main(vector_index_value,redis_client,'vector-zerodraftai-redis-vectordb-0001',openai_api_key,openai_api_client)
@@ -121,16 +112,30 @@ def main():
         # print (company_name,project_description)
     else:
         project_description = top_20_summarised_proj_desc
+    # import pdb;pdb.set_trace()
     try:
         # company_name = "xyz tech company"
-        sred_report = generate_sred_report(project_description)
+        sred_report = generate_sred_report(openai_api_client,project_description)
     except Exception as e:
         print ("The function generate_sred_report failed due to ", e)
     sred_report_text = ""
     for key, value in sred_report.items():
         sred_report_text = sred_report_text + key + ": " + value + "\n\n"
 
-    #write the sred report to a text file
+    #write the sred report and input file to a text file and upload it to S3
+
+    try:
+        write_input_text_file_to_s3(s3_client,aws_s3_bucket,f'sred_reports/SRED_report_{input_file_name}.txt',sred_report_text)
+        print("SRED report written to S3 bucket")
+    except Exception as e:
+        print ("Failed to write the report to S3 due to ", e)
+        import pdb;pdb.set_trace()
+    try:
+        write_input_text_file_to_s3(s3_client,aws_s3_bucket,input_text_file_key,input_transcripts_text)
+        print("Input transcripts written to S3 bucket")
+    except Exception as e:
+        print ("Failed to write the input transcripts to S3 due to ", e)
+        import pdb;pdb.set_trace()
     try:
         with open('sred_report.txt', 'w') as f:
             f.write(sred_report_text)
@@ -143,15 +148,20 @@ def main():
     sred_report_scores_dict = {}
     counter = 0
     for key,value in sred_report.items():
+        # if key == "project_candidates":
+        #     value_json = json.loads(value)
+        #     value = value_json['projects']['description']
         counter += 1
-        # if counter > 2:
+        # if counter >2:
         #     break
         sred_report_thread = key + ": " + value
+        current_thread = key
         meteor_score = None
         llm_as_judge_score = None
         try:
             print ("Evaluating the generated SRED report...")
-            meteor_score, llm_as_judge_score = evaluate_sred_report_main(s3_client,aws_s3_bucket,input_text_file_key,vector_index_value,sred_report_thread,redis_client,openai_api_client,input_transcripts_text)
+            # current_thread,s3_client,aws_s3_bucket,input_text_file_key,vector_index_name,generated_sred_report,vector_db,open_ai_client,transcript_text
+            meteor_score, llm_as_judge_score = evaluate_sred_report_main(current_thread,s3_client,aws_s3_bucket,input_text_file_key,vector_index_value,sred_report_thread,redis_client,openai_api_client,input_transcripts_text)
         except Exception as e:
             print ("The function evaluate_sred_report_main failed due to ", e)
             raise(e)

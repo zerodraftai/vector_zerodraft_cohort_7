@@ -1,6 +1,7 @@
 from nltk.translate.meteor_score import meteor_score
 from nltk.tokenize import word_tokenize
 from langchain_openai import OpenAIEmbeddings
+import prompts
 import json
 import re
 import redis
@@ -17,7 +18,8 @@ def build_prompt_for_llm_judge(transcript_text, generated_summary):
     1. A raw transcript between a consultant and a company.
     2. A generated SR&ED summary report.
 
-    Your task is to evaluate how well the generated summary reflects the key elements present in the transcript, using the official SR&ED criteria:
+    Your task is to evaluate **each individual section** in the summary report based on how well it contributes to the six official SR&ED assessment criteria:
+
     - Technological Uncertainty
     - Conventional Means
     - Hypothesis
@@ -25,7 +27,7 @@ def build_prompt_for_llm_judge(transcript_text, generated_summary):
     - Test Methodology
     - Test Results
 
-    For each criterion:
+    For each SR&ED criterion:
     - Assign a score from 0 to 5 (as per CRA rubric)
     - Justify the score with clear evidence from the transcript
     - Flag any hallucinations or missing details
@@ -36,21 +38,37 @@ def build_prompt_for_llm_judge(transcript_text, generated_summary):
 
     --- Generated SR&ED Summary ---
     {generated_summary}
+    Return your answer in this Markdown table format strictly:
 
-    Return your answer in this JSON format strictly:
 
-    {{
-    "technological_uncertainty": {{ "score": X, "reason": "..." }},
-    "conventional_means": {{ "score": X, "reason": "..." }},
-    "hypothesis": {{ "score": X, "reason": "..." }},
-    "prototype": {{ "score": X, "reason": "..." }},
-    "test_methodology": {{ "score": X, "reason": "..." }},
-    "test_results": {{ "score": X, "reason": "..." }},
-    "hallucination_check": "None" or "Yes, explain what was hallucinated",
-    "missing_info_check": "None" or "Yes, explain what was missing",
-    "overall_summary": "How well does the generated report align with the transcript?"
-    }}
+    | Category              | Score | Reason |
+    |-----------------------|-------|--------|
+    | Technological Uncertainty | X | ... |
+    | Conventional Means    | X | ... |
+    | Hypothesis            | X | ... |
+    | Prototype             | X | ... |
+    | Test Methodology      | X | ... |
+    | Test Results          | X | ... |
+
     """
+
+    # Hallucination Check: "None" or "Yes, explain what was hallucinated"
+
+    # Missing Info Check: "None" or "Yes, explain what was missing"
+    # Return your answer in this JSON format strictly:
+
+    # {{
+    # "technological_uncertainty": {{ "score": X, "reason": "..." }},
+    # "conventional_means": {{ "score": X, "reason": "..." }},
+    # "hypothesis": {{ "score": X, "reason": "..." }},
+    # "prototype": {{ "score": X, "reason": "..." }},
+    # "test_methodology": {{ "score": X, "reason": "..." }},
+    # "test_results": {{ "score": X, "reason": "..." }},
+    # "hallucination_check": "None" or "Yes, explain what was hallucinated",
+    # "missing_info_check": "None" or "Yes, explain what was missing",
+    # "overall_summary": "How well does the generated report align with the transcript?"
+    # }}
+
 def search_vector(vector_index_name, redis_client, query_embedding: np.ndarray, top_k: int = 10):
     query_vector = np.array(query_embedding, dtype=np.float32).tobytes()
 
@@ -66,7 +84,7 @@ def search_vector(vector_index_name, redis_client, query_embedding: np.ndarray, 
     except redis.RedisError as e:
         print(f"Error searching index: {e}")
         return None
-def generate_ground_truth_text(s3_client,aws_s3_bucket,input_text_file_key,vector_index_name,vector_db,generated_sred_report,openai_client,query_embedding):
+def generate_ground_truth_text(current_thread,s3_client,aws_s3_bucket,input_text_file_key,vector_index_name,vector_db,generated_sred_report,openai_client,query_embedding):
     system_prompt = "You are an expert SR&ED consultant."
     # retrieved_chunks = vector_db.search(query=generated_sred_report, top_k=5)
     # import pdb;pdb.set_trace()
@@ -84,9 +102,8 @@ def generate_ground_truth_text(s3_client,aws_s3_bucket,input_text_file_key,vecto
             # import pdb;pdb.set_trace()
             context += retrieved_chunks[index_chunk][3]
     user_prompt = (
-        "Given the following transcript between a company and a consultant, extract the most "
-        "relevant details that would go into an official SR&ED report section. Summarize only "
-        "what would likely be written in the final report. Output a clean paragraph in professional report style.\n\n"
+        f'''Given the following transcript between a company and a consultant, extract the most
+        relevant details that would go into an official SR&ED report's {current_thread} section.\n\n'''
         f"Transcript:\n{context}"
     )
     response = openai_client.chat.completions.create(
@@ -112,7 +129,7 @@ def rewrite_query(query,openai_client):
     )
     # import pdb;pdb.set_trace()
     return response.choices[0].message.content
-def evaluate_using_meteor(s3_client,aws_s3_bucket,input_text_file_key,vector_index_name,generated_sred_report,openai_client,vector_db):
+def evaluate_using_meteor(current_thread,s3_client,aws_s3_bucket,input_text_file_key,vector_index_name,generated_sred_report,openai_client,vector_db):
     """
     Evaluate ground text (using RAG) and the generated SRED report using METEOR score.
 
@@ -127,14 +144,14 @@ def evaluate_using_meteor(s3_client,aws_s3_bucket,input_text_file_key,vector_ind
     embedding_function = OpenAIEmbeddings(model="text-embedding-ada-002")
     # import pdb;pdb.set_trace()
     # query = " ".join([v for k,v in generated_sred_report.items()])
-    query = generated_sred_report
+    query = getattr(prompts, current_thread)
+    # try:
+    #     rewritten_query = rewrite_query(query,openai_client)
+    # except Exception as e:
+    #     print ("The function rewrite_query failed due to ", e)
+    query_embedding = embedding_function.embed_query(query)
     try:
-        rewritten_query = rewrite_query(query,openai_client)
-    except Exception as e:
-        print ("The function rewrite_query failed due to ", e)
-    query_embedding = embedding_function.embed_query(rewritten_query)
-    try:
-        ground_text_data=generate_ground_truth_text(s3_client,aws_s3_bucket,input_text_file_key,vector_index_name,vector_db,generated_sred_report,openai_client,query_embedding)
+        ground_text_data=generate_ground_truth_text(current_thread,s3_client,aws_s3_bucket,input_text_file_key,vector_index_name,vector_db,generated_sred_report,openai_client,query_embedding)
     except Exception as e:
         print ("The function generate_ground_truth_text failed due to ", e)
         pass
@@ -143,9 +160,9 @@ def evaluate_using_meteor(s3_client,aws_s3_bucket,input_text_file_key,vector_ind
         return None
     print (f"\nGround text data: \n {ground_text_data}\n")
     # print (f"Generated SRED report: {generated_sred_report}")
-    print (f"\n Rewritten query: \n {rewritten_query}\n")
+    print (f"\n Rewritten query: \n {query}\n")
     reference_tokens = word_tokenize(ground_text_data)
-    hypothesis_tokens = word_tokenize(rewritten_query)
+    hypothesis_tokens = word_tokenize(query)
     return meteor_score([reference_tokens], hypothesis_tokens)
 def fix_and_load_sred_json(output_text):
     output_text = re.sub(r"^```(?:json)?\n|\n```$", "", output_text.strip())
@@ -163,26 +180,27 @@ def evaluate_using_llm_as_judge(transcript_text,generated_sred_report,openai_cli
         temperature=0.2
     )
     output_text = response.choices[0].message.content.strip()
-    try:
-        result = json.loads(output_text)
-        return result
-    except json.JSONDecodeError:
-        try:
-            json_result = fix_and_load_sred_json(output_text)
-            return json_result
-        except Exception as e:
-            import pdb;pdb.set_trace()
-            print("⚠️ Failed to parse JSON. Here's the raw output:\n")
-            # print(output_text)
-        return None
+    return output_text
+    # try:
+    #     result = json.loads(output_text)
+    #     return result
+    # except json.JSONDecodeError:
+    #     try:
+    #         json_result = fix_and_load_sred_json(output_text)
+    #         return json_result
+    #     except Exception as e:
+    #         import pdb;pdb.set_trace()
+    #         print("⚠️ Failed to parse JSON. Here's the raw output:\n")
+    #         # print(output_text)
+    #     return None
 
-def evaluate_sred_report_main(s3_client,aws_s3_bucket,input_text_file_key,vector_index_name,generated_sred_report,vector_db,open_ai_client,transcript_text):
+def evaluate_sred_report_main(current_thread,s3_client,aws_s3_bucket,input_text_file_key,vector_index_name,generated_sred_report,vector_db,open_ai_client,transcript_text):
     # Example reference and hypothesis texts
     reference_text = "The quick brown fox jumps over the lazy dog."
     hypothesis_text = "A fast brown fox leaps over a lazy dog."
     # Calculate METEOR score
     try:
-        meteor_score = evaluate_using_meteor(s3_client,aws_s3_bucket,input_text_file_key,vector_index_name,generated_sred_report, open_ai_client,vector_db)
+        meteor_score = evaluate_using_meteor(current_thread,s3_client,aws_s3_bucket,input_text_file_key,vector_index_name,generated_sred_report, open_ai_client,vector_db)
     except Exception as e:
         print ("The function evaluate_using_meteor failed due to ", e)
 

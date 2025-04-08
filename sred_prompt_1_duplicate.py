@@ -17,6 +17,7 @@ Return your results as a single JSON object containing an array called "projects
 Each element in "projects" must be an object with exactly three keys:
 - "title": A concise, descriptive title for the project.
 - "description": A brief summary (1–2 sentences) explaining the common SR&ED focus.
+- "thread_ids": A list of the thread IDs included in the project.
 
 **Important**:
 - Do not include any explanation, commentary, or extra text outside of the JSON object.
@@ -29,10 +30,12 @@ Each element in "projects" must be an object with exactly three keys:
     {
       "title": "High-Precision Sensor Calibration Project",
       "description": "A set of SR&ED activities aiming to reduce sensor noise and improve calibration techniques.",
+      "thread_ids": [1, 3, 5]
     },
     {
       "title": "Advanced Data Processing Pipeline",
       "description": "Work on new algorithms and data structures to handle large-scale streaming data in real time.",
+      "thread_ids": [2, 4, 6]
     }
   ]
 }

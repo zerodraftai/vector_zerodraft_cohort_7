@@ -18,7 +18,7 @@ load_dotenv()
 #         print(f"Error searching index: {e}")
 #         import pdb;pdb.set_trace()
 #     return result
-def search_vector(vector_index_name, redis_client, query_embedding: np.ndarray, top_k: int = 20):
+def search_vector(vector_index_name, redis_client, query_embedding: np.ndarray, top_k: int = 10):
     query_vector = np.array(query_embedding, dtype=np.float32).tobytes()
 
     try:
@@ -80,8 +80,6 @@ def generate_proj_desc_from_top_20_results(top_20_ranked_results, openai_client)
         max_tokens=500
     )
     return response.choices[0].message.content.strip()
-
-
 
 def get_top_20_result(search_results,openai_client):
     if len(search_results) > 1:  # Ensure results exist
