@@ -180,7 +180,7 @@ if st.session_state.report:
         # Show original or regenerated content
         # display_text = st.session_state.regenerated.get(thread["id"], thread["content"])
         st.markdown(f"**Content:**\n\n{current_content}")
-        st.markdown(f"- Content Match Score:  `{current_meteor}`")
+        st.markdown(f"- Content Match Score:  `{round(current_meteor,2)}`")
         # current_llm_judge_df = display_json_as_table(llm_judge_score)
         st.markdown("**Model Based Assessment:**")
         st.markdown(llm_judge_score)
@@ -198,8 +198,8 @@ if st.session_state.report:
                 meteor_score, llm_judge_score = evaluate_sred_report_main(thread['id'],s3_client,aws_s3_bucket,input_text_file_key,vector_index_value,revised_content,redis_client,openai_api_client,input_transcripts_text)
                 st.session_state.regenerated[thread["id"]] = {
                     "content": revised_content,
-                    "meteor_score": meteor_score,
-                    "llm_judge_score": llm_judge_score
+                    "Content Match Score": round(meteor_score,2),
+                    "Model Based Assessment": llm_judge_score
                 }
                 st.success(f"Thread {thread['id']} regenerated and re-evaluated!")
                 st.experimental_rerun()
