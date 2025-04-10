@@ -1,8 +1,11 @@
 import streamlit as st
 from main import main
+import threading
 from openai import OpenAI
 import pandas as pd
 import os
+import random
+import time
 import boto3
 import redis
 import json
@@ -25,7 +28,7 @@ s3_client = boto3.client(
     aws_secret_access_key=AWS_SECRET_KEY
 )
 aws_s3_bucket = 'vector-zerodraftai-collab-s3'
-ec2_public_ip = "18.191.129.243"
+ec2_public_ip = "18.219.132.200"
 # ---------------- Redis Configuration ------------------- #
     # host='clustercfg.vector-zerodraftai-collab-redis-vectordb.dkvbaf.memorydb.us-east-2.amazonaws.com',
 redis_url = ec2_public_ip
@@ -38,6 +41,23 @@ redis_client = redis.StrictRedis(
 vector_index_value = 'my_vector_index_4'
 # input_transcripts_text = read_input_text_from_s3(s3_client,aws_s3_bucket,input_text_file_key)
 complete_sred_report = None
+def generate_sred_fun_fact():
+    response = openai_api_client.chat.completions.create(
+        model="gpt-4",   # or "gpt-3.5-turbo" if you prefer
+        messages=[
+            {"role": "system", "content": "You are an expert on Canadian SR&ED tax credits."},
+            {"role": "user", "content": "Generate a fun and interesting fact about the SR&ED program in 1-2 sentences. Make it light and engaging."}
+        ],
+        temperature=0.8,  # slight randomness to make it fun
+        max_tokens=60
+    )
+    fun_fact = response.choices[0].message.content
+    return fun_fact
+def preload_fun_facts(n=10):
+    facts = []
+    for _ in range(n):
+        facts.append(generate_sred_fun_fact())
+    return facts
 
 def generate_report(input_transcripts_text,input_file_name):
     ##Copy the contents of the AWS S3 bucket to a different folder.
@@ -80,9 +100,11 @@ def regenerate_thread_content(original, comment,complete_sred_report,open_ai_cli
 
 # Streamlit App UI
 st.set_page_config(page_title="SR&ED Report Generator & Editor", layout="wide")
-st.title("📄 SR&ED Report Generator + Editor")
+st.image("image.png", width=150)  # Replace "logo.png" with your logo path
+st.title("📄 Zerodraft AI - Scientific Research and Educational Development (SR&ED) Grant Generator")
 
-# ---------------- NEW FILE UPLOAD SECTION ---------------- #
+# ---------------- NEW FILE UPLOAD SECTION ---------
+# ------- #
 uploaded_file = st.file_uploader(
     "Upload the transcripts between Zerodraft and client company in JSON file",
     type="json"
@@ -107,14 +129,42 @@ if st.button("🧠 Generate SR&ED Report"):
         st.error("Please upload a JSON transcript file first.")
         st.stop()
     with st.spinner("Generating SR&ED report..."):
-        sred_report_scores_list, sred_report_scores_list_content = generate_report(input_transcripts_text,input_file_name)
+        try:
+            facts = preload_fun_facts(10)
+        except Exception as e:
+            print("The function generate_sred_fun_fact failed due to ", e)
+            facts = ["We were supposed to generate a fun fact to entertain you - but it failed :-("]
+        st.subheader("✨ Learn Something New While You Wait!")
+        placeholder = st.empty()
+        # ------------- 🔥 Start report generation in a background thread
+        results = []
+
+        def run_report_generation(input_transcripts_text, input_file_name, results):
+            sred_report_scores_list, sred_report_scores_list_content = generate_report(input_transcripts_text, input_file_name)
+            results.append((sred_report_scores_list, sred_report_scores_list_content))
+
+        report_thread = threading.Thread(target=run_report_generation, args=(input_transcripts_text, input_file_name, results))
+        report_thread.start()
+
+        # ------------- 🔥 Meanwhile, display fun facts
+        interval = 10  # Show fun fact every 10 seconds
+        while report_thread.is_alive():
+            fun_fact = random.choice(facts)
+            placeholder.info(f"💡 Fun Fact: {fun_fact}")
+            time.sleep(interval)
+
+        # ------------- 🔥 After report is done
+        report_thread.join()  # Ensure report generation is complete
+        sred_report_scores_list, sred_report_scores_list_content = results[0]
+
+        # sred_report_scores_list, sred_report_scores_list_content = generate_report(input_transcripts_text,input_file_name)
         st.session_state.report = sred_report_scores_list
         complete_sred_report = sred_report_scores_list_content
         st.success("Report generated! You can now review and edit each section.")
 
 # Step 2: Display report editor UI
 if st.session_state.report:
-    st.markdown("## ✏️ Edit Report Threads")
+    st.markdown("## ✏️ SRED Report Analyser")
     input_text_file_key = f"uploaded_current_transcripts/{uploaded_file.name}"
     input_transcripts_text = read_input_text_from_s3(s3_client,aws_s3_bucket,input_text_file_key)
     for idx,thread in enumerate(st.session_state.report):
@@ -130,9 +180,9 @@ if st.session_state.report:
         # Show original or regenerated content
         # display_text = st.session_state.regenerated.get(thread["id"], thread["content"])
         st.markdown(f"**Content:**\n\n{current_content}")
-        st.markdown(f"- METEOR Score: `{current_meteor}`")
+        st.markdown(f"- Content Match Score:  `{current_meteor}`")
         # current_llm_judge_df = display_json_as_table(llm_judge_score)
-        st.markdown("**LLM-as-a-Judge Score:**")
+        st.markdown("**Model Based Assessment:**")
         st.markdown(llm_judge_score)
 
         # Comment + Regeneration

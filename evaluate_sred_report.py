@@ -94,25 +94,31 @@ def generate_ground_truth_text(current_thread,s3_client,aws_s3_bucket,input_text
         print ("The function search_vector failed due to ", e)
         pass
     if retrieved_chunks is None:
+        print ("==================")
         print ("The function search_vector failed to retrieve any chunks")
+        print ("==================")
         context = read_input_text_from_s3(s3_client,aws_s3_bucket,input_text_file_key)
     else:
         context = ''
         for index_chunk in range(2,len(retrieved_chunks),2):
             # import pdb;pdb.set_trace()
             context += retrieved_chunks[index_chunk][3]
+    print ("============")
+    # print (current_thread, "retrieved chunks: ", retrieved_chunks)
+    print ("============")
     user_prompt = (
         f'''Given the following transcript between a company and a consultant, extract the most
-        relevant details that would go into an official SR&ED report's {current_thread} section.\n\n'''
+        relevant details that would go into an official SR&ED report's {current_thread} section. Be more specific as you can and do not be generic\n\n'''
         f"Transcript:\n{context}"
     )
     response = openai_client.chat.completions.create(
-        model="gpt-4",
+        model="o3-mini",
         messages=[
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": user_prompt}
         ]
     )
+    return context
     return response.choices[0].message.content.strip()
 def rewrite_query(query,openai_client):
     prompt = f"""
@@ -158,28 +164,28 @@ def evaluate_using_meteor(current_thread,s3_client,aws_s3_bucket,input_text_file
     if ground_text_data is None:
         print ("Evaluation using METEOR failed due to missing ground truth data")
         return None
+    print ("------- Output:\n\n")
+    print (f"Thread: \n {current_thread}\n")
     print (f"\nGround text data: \n {ground_text_data}\n")
+    print ("-------")
     # print (f"Generated SRED report: {generated_sred_report}")
     print (f"\n Rewritten query: \n {query}\n")
     reference_tokens = word_tokenize(ground_text_data)
-    hypothesis_tokens = word_tokenize(query)
+    hypothesis_tokens = word_tokenize(generated_sred_report)
     return meteor_score([reference_tokens], hypothesis_tokens)
 def fix_and_load_sred_json(output_text):
     output_text = re.sub(r"^```(?:json)?\n|\n```$", "", output_text.strip())
     output_text = re.sub(r"\{\{", "{", output_text)
     output_text = re.sub(r"\}\}", "}", output_text)
     return json.loads(output_text)
-def evaluate_using_llm_as_judge(transcript_text,generated_sred_report,openai_client,):
+def evaluate_using_llm_as_judge(transcript_text,generated_sred_report,openai_client):
+    # import pdb;pdb.set_trace()
     try:
         prompt = build_prompt_for_llm_judge(transcript_text, generated_sred_report)
     except Exception as e:
         print ("The function build_prompt_for_llm_judge failed due to ", e)
-    response = openai_client.chat.completions.create(
-        model="gpt-4-0125-preview",
-        messages=[{"role": "user", "content": prompt}],
-        temperature=0.2
-    )
-    output_text = response.choices[0].message.content.strip()
+    response = openai_client.chat.completions.create(model="o3-mini",messages=[{"role": "user", "content": prompt}])
+    output_text = response.choices[0].message.content
     return output_text
     # try:
     #     result = json.loads(output_text)
@@ -196,8 +202,7 @@ def evaluate_using_llm_as_judge(transcript_text,generated_sred_report,openai_cli
 
 def evaluate_sred_report_main(current_thread,s3_client,aws_s3_bucket,input_text_file_key,vector_index_name,generated_sred_report,vector_db,open_ai_client,transcript_text):
     # Example reference and hypothesis texts
-    reference_text = "The quick brown fox jumps over the lazy dog."
-    hypothesis_text = "A fast brown fox leaps over a lazy dog."
+
     # Calculate METEOR score
     try:
         meteor_score = evaluate_using_meteor(current_thread,s3_client,aws_s3_bucket,input_text_file_key,vector_index_name,generated_sred_report, open_ai_client,vector_db)

@@ -18,7 +18,7 @@ load_dotenv()
 #         print(f"Error searching index: {e}")
 #         import pdb;pdb.set_trace()
 #     return result
-def search_vector(vector_index_name, redis_client, query_embedding: np.ndarray, top_k: int = 10):
+def search_vector(vector_index_name, redis_client, query_embedding: np.ndarray, top_k: int = 20):
     query_vector = np.array(query_embedding, dtype=np.float32).tobytes()
 
     try:
@@ -134,7 +134,7 @@ def rag_pipeline_main(vector_index_name,redis_client, redis_index, openai_api_ke
     except Exception as e:
         print("The function rewrite_query failed due to ", e)
     # query_embedding = embedding_function(query)
-    print ("\n The RAG pipeline rewritten query:\n" + query +"\n")
+    # print ("\n The RAG pipeline rewritten query:\n" + query +"\n")
     query_embedding = embedding_function.embed_query(query)
     # Perform similarity search
     # retrieved_docs = vectorstore.similarity_search(query, k=5)

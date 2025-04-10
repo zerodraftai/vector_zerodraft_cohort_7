@@ -12,6 +12,9 @@ from openai import OpenAI
 import json
 import redis
 def main(input_transcripts_text,input_file_name):
+    print ("==============================")
+    print ("Inside the main function")
+    print ("==============================")
 
     # ---------------- AWS Configuration ------------------- #
     AWS_ACCESS_KEY = os.getenv('AWS_ACCESS_KEY_ID')
@@ -23,7 +26,7 @@ def main(input_transcripts_text,input_file_name):
         aws_secret_access_key=AWS_SECRET_KEY
     )
     aws_s3_bucket = 'vector-zerodraftai-collab-s3'
-    ec2_public_ip = "18.191.129.243"
+    ec2_public_ip = "18.219.132.200"
     # ---------------- Redis Configuration ------------------- #
         # host='clustercfg.vector-zerodraftai-collab-redis-vectordb.dkvbaf.memorydb.us-east-2.amazonaws.com',
     redis_url = ec2_public_ip
@@ -33,7 +36,7 @@ def main(input_transcripts_text,input_file_name):
         decode_responses=True,
         ssl=False
     )
-    vector_index_value = 'my_vector_index_4'
+    vector_index_value = 'my_vector_index_1'
 
     def create_vector_index(redis_client, vector_index_name, embedding_dim=1536):
         existing_indexes = redis_client.execute_command("FT._LIST")
@@ -60,10 +63,10 @@ def main(input_transcripts_text,input_file_name):
 
     # Try again
     create_vector_index(redis_client, vector_index_value)
-    print(redis_client.execute_command("FT._LIST"))
+    # print(redis_client.execute_command("FT._LIST"))
 
     # Run the function once to create the index
-    create_vector_index(redis_client,vector_index_value)
+    # create_vector_index(redis_client,vector_index_value)
 
 
     # ---------------- Lambda Configuration ------------------- #
@@ -103,6 +106,7 @@ def main(input_transcripts_text,input_file_name):
         raise(e)
     # import pdb;pdb.set_trace()
     if top_20_summarised_proj_desc == "No Project description found.":
+        print ("No project description found. Using the input transcripts text as the project description.")
         try:
             company_name_project_description = extract_company_and_project(openai_api_client,s3_client,aws_s3_bucket,input_text_file_key,)
             company_name = company_name_project_description['company_name']
@@ -113,6 +117,9 @@ def main(input_transcripts_text,input_file_name):
     else:
         project_description = top_20_summarised_proj_desc
     # import pdb;pdb.set_trace()
+    print ("==============================")
+    print ("Project description: ", project_description)
+    print ("==============================")
     try:
         # company_name = "xyz tech company"
         sred_report = generate_sred_report(openai_api_client,project_description)
@@ -148,10 +155,11 @@ def main(input_transcripts_text,input_file_name):
     sred_report_scores_dict = {}
     counter = 0
     for key,value in sred_report.items():
-        # if key == "project_candidates":
-        #     value_json = json.loads(value)
-        #     value = value_json['projects']['description']
-        counter += 1
+        if key == "project_candidates":
+            # import pdb;pdb.set_trace()
+            value_json = json.loads(value)
+            value = value_json['projects'][0]['description'] + "\n" + value_json['projects'][0]['description']
+        # counter += 1
         # if counter >2:
         #     break
         sred_report_thread = key + ": " + value

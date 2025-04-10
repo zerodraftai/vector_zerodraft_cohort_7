@@ -28,3 +28,14 @@ You are a SR&ED reviewer. Find transcript parts that would help answer this SR&E
 Retrieve transcript excerpts that mention the team members involved, the technologies, tools, or platforms used, and how the work was documented. Focus on any descriptions of collaboration, resource planning, or documentation processes.
 """
 
+# technological_advancements = '"new technical knowledge" OR "improved methods" OR "new techniques" OR "reusable solutions" OR "advanced but failed"'
+
+# project_candidates = '"project technical work" OR "project objectives" OR "key technical milestones" OR "developed feature" OR "created solution"'
+
+# technological_uncertainties = '"technical challenge" OR "knowledge gap" OR "unsolved problem" OR "unexpected technical risk" OR "uncertainty about feasibility"'
+
+# systematic_investigation = '"experiment" OR "testing hypothesis" OR "controlled experiment" OR "iterative prototyping" OR "methodical troubleshooting"'
+
+# scientific_technical_knowledge = '"new technical insight" OR "lesson learned" OR "improved understanding" OR "extended scientific knowledge" OR "novel solution"'
+
+# work_done = '"team contribution" OR "technology used" OR "tools applied" OR "documentation" OR "collaboration on technical tasks"'
