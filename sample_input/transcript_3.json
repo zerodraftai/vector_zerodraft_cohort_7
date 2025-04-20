@@ -1,0 +1,233 @@
+{
+  "title": "Technical Interview Transcript (Word File)",
+  "transcript": [
+    {
+      "speaker_name": "speaker 1",
+      "raw_text": "Basically we're applying for like a government thing and we basically just need to get some technical facts and details about this project that you guys have been working on. Does that make sense?"
+    },
+    {
+      "speaker_name": "speaker 2",
+      "raw_text": "Oh yeah."
+    },
+    {
+      "speaker_name": "speaker 1",
+      "raw_text": "Like that's why we're here. And then like basically going to ask for like a high level overview and then some like technical details, iterations, challenges. That's really what we want to show. And then like basically this is for R D, right? So you gotta make a narrative explaining the R and D, the technical process in order to get approved. What the government wants to see is like kind of analogous to the scientific method, but understandably, like we're not scientists, we're programmers. So kind of follow something, probably something similar when you're working. So basically to be considered R D in Canada, the work that you're doing, you have to go through like a technical problem. That technical problem can't be solved with like a normal routine engineering approach. As in like it's not a textbook method. Right."
+    },
+    {
+      "speaker_name": "speaker 2",
+      "raw_text": "You have to do some research or come up with something, test it. You make a hypothesis, you make a prototype of the hypothesis, you test and you have a test result. So going from like a problem that is blocked to like some work that either unblocks it or doesn't, like, you can totally fail to unblock that problem and it still counts as R and D. Just looking for a few elements of that in the story of what you guys did. And then I'll have everything. So hopefully within like 30, 40 minutes I'm able to capture everything we need. Or how long is this one? Yeah, that's an hour. So yeah, something like that. That makes sense? Yeah, I know it was a lot."
+    },
+    {
+      "speaker_name": "speaker 1",
+      "raw_text": "No, no. I'm just thinking like in what situations do we sort of have that scientific process? Most of it is general development. Yeah, there were a few blockers but like, yeah, we did do some research, but it's nothing crazy."
+    },
+    {
+      "speaker_name": "speaker 2",
+      "raw_text": "Let's just start at the top. Like what is the project itself? I don't know, a lot."
+    },
+    {
+      "speaker_name": "speaker 1",
+      "raw_text": "Right. So the project is, it's like a web application which has a lot of, you know, backend processing that sort of helps the end clients optimize their website conversion rate through like user experience optimization. At the core of it we have these things called insights. And insights are essentially actionable little changes you can make to your website. Maybe changing the way something looks, the layout, changing accessibility options, all that. And then we have all these systems in place to sort of justify those changes. And eventually we're going to say we can calculate the actual impact of implementing these things. So the project in itself is sort of, I don't know, sort of scientific in a way because it has these hypotheses that have, you know, actual economic value. Like, hey, if you implement this, then we think it'll give you this much more money."
+    },
+    {
+      "speaker_name": "speaker 1",
+      "raw_text": "And then afterwards we have these reports saying, hey, you increased the revenue this much. Because we do track all these things through analytics. That's also another big part. So it's like the insights and then the analytics. So it's sort of like an interconnected system where we implement the insights, we use the analytics to justify the insights, and then we also use the analytics to prove that the insights have increased revenue, increased conversion rates, and all that. Then we have like a bunch of different views that sort of play into that as well. We have, yeah."
+    },
+    {
+      "speaker_name": "speaker 2",
+      "raw_text": "Okay, so yeah, is this site live right now or the product? Like, can I find it on Google or go on it?"
+    },
+    {
+      "speaker_name": "speaker 1",
+      "raw_text": "Yeah, you can go on a redacted* app. Let me type it in."
+    },
+    {
+      "speaker_name": "speaker 2",
+      "raw_text": "The redacted* app?"
+    },
+    {
+      "speaker_name": "speaker 1",
+      "raw_text": "Yeah, yeah."
+    },
+    {
+      "speaker_name": "speaker 2",
+      "raw_text": "Oh, redacted*. I went on redacted* app and it's like, connection is not private. Cert name and valid. I'm like, okay, yeah, am I able to sign up? Is it free or not? Like, am I gonna get paywall or. It's fine if, like, I don't need to look through it right now, but."
+    },
+    {
+      "speaker_name": "speaker 1",
+      "raw_text": "Yeah, could like share my screen and do like a demo, I guess. Okay, one sec. It's sort of like a second. See? Yeah, it should be okay, right? Like, it's not going to break my NDA or anything since, like, we're, we have."
+    },
+    {
+      "speaker_name": "speaker 2",
+      "raw_text": "I have a contract with."
+    },
+    {
+      "speaker_name": "speaker 1",
+      "raw_text": "Okay, so it's all good."
+    },
+    {
+      "speaker_name": "speaker 2",
+      "raw_text": "I'm under NDA."
+    },
+    {
+      "speaker_name": "speaker 1",
+      "raw_text": "Awesome. Okay, so let me know if you can see the website."
+    },
+    {
+      "speaker_name": "speaker 2",
+      "raw_text": "Yep, awesome."
+    },
+    {
+      "speaker_name": "speaker 1",
+      "raw_text": "So at the very first when you sign up and you create an account and you make a project, what happens is the project goes into our automatic system which scrapes the pages that you want, gets the HTML and all the code, and then uses WCAG to look through the accessibility requirements. Then we have custom code to check some other requirements. That's essentially how it generates the insights. If you go to any insight here, we can see it has the related element that is sort of being, you know, saying like, hey, we can improve this. Right now we don't have the impact calculations, but we will soon. You can see like observation, type, severity fix, and then we have AI-generated recommendations and rules and descriptions essentially. Okay, yeah. Then if we go to the dashboard, we have metrics."
+    },
+    {
+      "speaker_name": "speaker 2",
+      "raw_text": "These are basically connected to Matomo, where we can track things like page views, conversion rates, all that."
+    },
+    {
+      "speaker_name": "speaker 1",
+      "raw_text": "Motomo M O T O M O."
+    },
+    {
+      "speaker_name": "speaker 2",
+      "raw_text": "Yeah, it's kind of like Google Analytics."
+    },
+    {
+      "speaker_name": "speaker 1",
+      "raw_text": "Okay."
+    },
+    {
+      "speaker_name": "speaker 2",
+      "raw_text": "Yeah."
+    },
+    {
+      "speaker_name": "speaker 1",
+      "raw_text": "Cool. All right, so we have like, funnels as well. This is more for checking the paths that users take throughout the website. We can say like, hey, does it achieve a goal? Does it make money? Essentially this right now is just saying most people go to the website, the homepage, and then leave. Right. So that is a point that we can optimize and, you know, eventually we'll talk about that. There's also click tracking. We can say how many people, like, clicked here, what the general movement is for the website. We have frustrations, which is like, if someone clicks on a button and it's like not working, they click a bunch of times. You know, you really don't want that. Scroll maps, how much people view the page. Hesitations, like someone hovers over something, it doesn't click."
+    },
+    {
+      "speaker_name": "speaker 2",
+      "raw_text": "And then we have, like, insights directly on the page. You can see some of these are, like, tied to buttons and such. Then we have Personas, which identify the kind of people that visit your website—those who leave quickly, those who read and then buy something—and then we can classify them as high or low value to optimize for them. Then there are the admin pages for team collaboration."
+    },
+    {
+      "speaker_name": "speaker 1",
+      "raw_text": "These are just admin pages, so I guess there's not much to show there. I could if you want, but."
+    },
+    {
+      "speaker_name": "speaker 2",
+      "raw_text": "Oh, that's true. Okay. And then… Sorry, you're the sole developer on this. How did you work on it? Like, were you part of a team?"
+    },
+    {
+      "speaker_name": "speaker 1",
+      "raw_text": "Not just me, there's one more person that works on it, but essentially I'm the one who puts up all the plans and technical research and all that."
+    },
+    {
+      "speaker_name": "speaker 2",
+      "raw_text": "And then the other guy works. Is that part of redacted* or a different team?"
+    },
+    {
+      "speaker_name": "speaker 1",
+      "raw_text": "Yeah, part of redacted*. There’s a lot of people working on this in different capacities—we have an AI person and a mathematician consulting on the formulas and algorithms. There's also an early feature that shows a super view of the website to optimize user paths, which involves a bit of math."
+    },
+    {
+      "speaker_name": "speaker 2",
+      "raw_text": "Yeah."
+    },
+    {
+      "speaker_name": "speaker 1",
+      "raw_text": "And then… Okay, sorry, can you go back to the diagram? This diagram was based on work developed by the mathematician to generate a graph using an NPM package for a visx Sankey diagram. The algorithm is built in, so we didn't do much research on that part—just some basic data structure processing on our end."
+    },
+    {
+      "speaker_name": "speaker 2",
+      "raw_text": "Understood. And then out of these features, there's that check mark or heartbeat thing on the dashboard that shows insights, metrics, performance, page speed. The light bulb icon represents insights, then the heat map, tracking Personas, and finally the Sankey diagram. Got it."
+    },
+    {
+      "speaker_name": "speaker 1",
+      "raw_text": "Yeah, that gives a lot of context on what the project is and what we're trying to accomplish."
+    },
+    {
+      "speaker_name": "speaker 2",
+      "raw_text": "I'm a developer too. I just wanted to ask, when you came into the project, what was the state? Was it starting from zero?"
+    },
+    {
+      "speaker_name": "speaker 1",
+      "raw_text": "It was completely different. There was already something in place. The only thing that stayed the same was the general idea of it—namely, the use of the website. Everything else changed: the metrics, moving from Google Analytics to Matomo, and then overhauling the system to get raw data for individual clicks and scrolls."
+    },
+    {
+      "speaker_name": "speaker 2",
+      "raw_text": "You had to do a massive overhaul, then?"
+    },
+    {
+      "speaker_name": "speaker 1",
+      "raw_text": "Yes. We had to do tons of research, speak with Google Analytics experts, and even look into Google Analytics360. They gave us some pointers and then we learned that while Google Analytics provides general metrics, it doesn't give the raw data we needed. Matomo did."
+    },
+    {
+      "speaker_name": "speaker 2",
+      "raw_text": "Okay, so for analytics, you started off with Google but then switched to Matomo because it provided more detailed data?"
+    },
+    {
+      "speaker_name": "speaker 1",
+      "raw_text": "Exactly. But even then, Matomo required extra steps. It tracks page views by default, but not clicks. We had to custom-write scripts to inject into Matomo for tracking coordinates and clicks, and now we're planning to use that data for user journey analysis."
+    },
+    {
+      "speaker_name": "speaker 2",
+      "raw_text": "And then you mentioned the architecture is loosely coupled and highly cohesive—a development philosophy rather than a specific stack."
+    },
+    {
+      "speaker_name": "speaker 1",
+      "raw_text": "Exactly. It allows for flexibility given the constantly changing project requirements."
+    },
+    {
+      "speaker_name": "speaker 2",
+      "raw_text": "Right. Then you talked about generating custom higher-level data from the Matomo tracking. You had to prototype the click and mouse movement tracking to generate heat maps and other insights from raw time-series data."
+    },
+    {
+      "speaker_name": "speaker 1",
+      "raw_text": "Yeah, that's correct. We capture the coordinate data from mouse clicks and movements in the browser and then aggregate that into heat maps and movement traces."
+    },
+    {
+      "speaker_name": "speaker 2",
+      "raw_text": "Then moving on to some challenges: you mentioned you had to contend with high costs from Matomo’s managed cloud, so you switched to self-hosting Matomo on Azure with a combination of MySQL for core data and Firestore for simpler event data."
+    },
+    {
+      "speaker_name": "speaker 1",
+      "raw_text": "Right. The managed cloud option for Matomo was far too expensive due to the volume of data we needed to track. We calculated it would cost millions per month, so we moved to a self-hosted model and wrote custom code to store simpler data on Firestore."
+    },
+    {
+      "speaker_name": "speaker 2",
+      "raw_text": "Got it. And then with the insights, you initially generated individual AI calls for each data point, but due to cost constraints, you switched to a multi-metrics batching approach so the AI can analyze all the data in one go."
+    },
+    {
+      "speaker_name": "speaker 1",
+      "raw_text": "Exactly. The batching approach reduced costs and allowed the AI to analyze relative significance, so only the most important issues are flagged."
+    },
+    {
+      "speaker_name": "speaker 2",
+      "raw_text": "Okay, and lastly, before wrapping up, there was a brief mention of migrating analytics to Azure and ensuring logs are timestamped for audit purposes."
+    },
+    {
+      "speaker_name": "speaker 1",
+      "raw_text": "Yes, our logs include timestamps for audit purposes, and though some of the migration details are technical, it all comes together with our overall analytics setup."
+    },
+    {
+      "speaker_name": "speaker 2",
+      "raw_text": "Alright, I'll be honest—I think I have enough to write the project up. Thanks a lot for all the details."
+    },
+    {
+      "speaker_name": "speaker 1",
+      "raw_text": "Thanks."
+    },
+    {
+      "speaker_name": "speaker 2",
+      "raw_text": "It's been impressive. We'll be in touch if anything else comes up."
+    },
+    {
+      "speaker_name": "speaker 1",
+      "raw_text": "Alright, take care, man. You've been great. Thanks a lot."
+    },
+    {
+      "speaker_name": "speaker 2",
+      "raw_text": "Yeah, no, thank you, man. Take care. Bye."
+    }
+  ]
+}

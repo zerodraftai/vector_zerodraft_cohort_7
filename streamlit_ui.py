@@ -28,7 +28,7 @@ s3_client = boto3.client(
     aws_secret_access_key=AWS_SECRET_KEY
 )
 aws_s3_bucket = 'vector-zerodraftai-collab-s3'
-ec2_public_ip = "18.219.132.200"
+ec2_public_ip = "18.222.184.174"
 # ---------------- Redis Configuration ------------------- #
     # host='clustercfg.vector-zerodraftai-collab-redis-vectordb.dkvbaf.memorydb.us-east-2.amazonaws.com',
 redis_url = ec2_public_ip
