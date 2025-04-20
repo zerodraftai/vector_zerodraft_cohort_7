@@ -3,8 +3,7 @@ import json
 import boto3
 import numpy as np
 import os
-from dotenv import load_dotenv
-load_dotenv()
+
 
 # redis_host = "localhost"
 # redis_port = 6379

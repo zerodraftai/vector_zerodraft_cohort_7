@@ -1,7 +1,7 @@
 from nltk.translate.meteor_score import meteor_score
 from nltk.tokenize import word_tokenize
 from langchain_openai import OpenAIEmbeddings
-import prompts
+import src.helper_functions.prompts as prompts
 import json
 import re
 import redis

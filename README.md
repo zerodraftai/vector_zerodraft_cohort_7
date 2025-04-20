@@ -47,8 +47,9 @@ OPENAI_API_KEY
 ## 🧠 Core Modules
 - `chunking_and_embedding`: Handles chunking and embedding of input data.
 - `sred_report_generation`: Contains the logic for generating SRED reports.
-- `sred_report_evaluation`: Evaluates the generated SRED reports using LLM as a judge model and METEOR score.
+- `sred_report_evaluation`: Evaluates the generated SRED reports using LLM as a judge model and METEOR score. For the METEOR score, we generate ground truth using RAG wherein we use a series of prompts that are matched against the transcripts to retrieve the most similar parts. These parts are then collated and passed through an LLM with a prompt to generate the ground truth.
 - `sred_report_editing`: Provides functionality to edit the generated SRED reports.
+- `helper_functions`: Contains helper functions for various tasks, including Redis vector deletion and prompt generation.
 
 ## 🤝 Acknowledgments
 

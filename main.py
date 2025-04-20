@@ -1,16 +1,18 @@
-from perform_chunking import perform_chunking_main
-from generate_embeddings import generate_and_store_embeddings_main
-from rag_pipeline_to_generate_proj_description import rag_pipeline_main
-from sred_prompt_1 import generate_sred_report
-from retrieve_company_and_project_name import extract_company_and_project
-from evaluate_sred_report import evaluate_sred_report_main
-from helper_function import write_input_text_file_to_s3
+from src.chunking_and_embedding.perform_chunking import perform_chunking_main
+from src.chunking_and_embedding.generate_embeddings import generate_and_store_embeddings_main
+from src.sred_report_generation.rag_pipeline_to_generate_proj_description import rag_pipeline_main
+from src.sred_report_generation.sred_prompt_1 import generate_sred_report
+from src.sred_report_generation.retrieve_company_and_project_name import extract_company_and_project
+from src.sred_report_evaluation.evaluate_sred_report import evaluate_sred_report_main
+from src.helper_functions.helper_function import write_input_text_file_to_s3
 import streamlit as st
 import os
 import boto3
 from openai import OpenAI
 import json
 import redis
+from dotenv import load_dotenv
+load_dotenv()
 def main(input_transcripts_text,input_file_name):
     print ("==============================")
     print ("Inside the main function")

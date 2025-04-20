@@ -11,9 +11,9 @@ import redis
 import json
 from dotenv import load_dotenv
 load_dotenv()
-from helper_function import write_input_text_file_to_s3, read_input_text_from_s3
-from evaluate_sred_report import evaluate_sred_report_main
-from edit_sred_report import edit_sred_report_main
+from src.helper_functions.helper_function import write_input_text_file_to_s3, read_input_text_from_s3
+from src.sred_report_evaluation.evaluate_sred_report import evaluate_sred_report_main
+from src.sred_report_editing.edit_sred_report import edit_sred_report_main
 
 input_text_file_key = 'Input_data/transcript_sample_1.json'
 openai_api_key = os.getenv("OPENAI_API_KEY")
