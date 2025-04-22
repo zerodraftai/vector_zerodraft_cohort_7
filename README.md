@@ -36,6 +36,7 @@ vector_zerodraft_cohort_7/
 ```bash
 python -m streamlit run streamlit_ui.py
 ```
+- Also check out Readme-meta.md for more details on how to run the project.
 
 ### Environment Variables
 
@@ -46,6 +47,7 @@ OPENAI_API_KEY
 
 ## 🧠 Core Modules
 - `chunking_and_embedding`: Handles chunking and embedding of input data.
+We use redis as a vector db. We turn on the ec2 instance every time we run this agent. We use AWS lamda function to start the EC2 on which we have setup a proxy to connect to the redis vector db. The proxy service starts on startup of EC2. At the end of the agents run, it shutsdown the EC2.
 - `sred_report_generation`: Contains the logic for generating SRED reports.
 - `sred_report_evaluation`: Evaluates the generated SRED reports using LLM as a judge model and METEOR score. For the METEOR score, we generate ground truth using RAG wherein we use a series of prompts that are matched against the transcripts to retrieve the most similar parts. These parts are then collated and passed through an LLM with a prompt to generate the ground truth.
 - `sred_report_editing`: Provides functionality to edit the generated SRED reports.

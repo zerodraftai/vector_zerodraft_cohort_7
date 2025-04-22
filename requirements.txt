@@ -1,7 +1,11 @@
-redis
-boto3
-nltk
-openai
+boto3==1.37.37
+langchain==0.3.23
+langchain_openai==0.3.14
+langchain_redis==0.2.0
+nltk==3.9.1
 numpy
-dotenv
-redis
+openai==1.75.0
+python-dotenv==1.1.0
+redis==5.2.1
+streamlit==1.12.0
+altair==4.0.0

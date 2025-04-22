@@ -1,5 +1,5 @@
 import streamlit as st
-from main import main
+from src.helper_functions.main import main
 import threading
 from openai import OpenAI
 import pandas as pd
@@ -14,6 +14,7 @@ load_dotenv()
 from src.helper_functions.helper_function import write_input_text_file_to_s3, read_input_text_from_s3
 from src.sred_report_evaluation.evaluate_sred_report import evaluate_sred_report_main
 from src.sred_report_editing.edit_sred_report import edit_sred_report_main
+from src.helper_functions.automate_ec2_lambda_func import start_ec2_via_lambda,stop_ec2_via_lambda
 
 input_text_file_key = 'Input_data/transcript_sample_1.json'
 openai_api_key = os.getenv("OPENAI_API_KEY")
@@ -28,7 +29,11 @@ s3_client = boto3.client(
     aws_secret_access_key=AWS_SECRET_KEY
 )
 aws_s3_bucket = 'vector-zerodraftai-collab-s3'
-ec2_public_ip = "18.222.184.174"
+try:
+    ec2_public_ip = start_ec2_via_lambda()
+except Exception as e:
+    print ("The function start_ec2_via_lambda failed due to ", e)
+    import pdb;pdb.set_trace()
 # ---------------- Redis Configuration ------------------- #
     # host='clustercfg.vector-zerodraftai-collab-redis-vectordb.dkvbaf.memorydb.us-east-2.amazonaws.com',
 redis_url = ec2_public_ip
@@ -38,6 +43,7 @@ redis_client = redis.StrictRedis(
     decode_responses=True,
     ssl=False
 )
+print (f"\nEC2 Public IP Address:{ec2_public_ip}\n")
 vector_index_value = 'my_vector_index_4'
 # input_transcripts_text = read_input_text_from_s3(s3_client,aws_s3_bucket,input_text_file_key)
 complete_sred_report = None

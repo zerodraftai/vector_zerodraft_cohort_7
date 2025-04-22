@@ -176,3 +176,4 @@ cython_debug/
 
 #python venv
 ./vector_env/*
+./vector_temp_env/*
