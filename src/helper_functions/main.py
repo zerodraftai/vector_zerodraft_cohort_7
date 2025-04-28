@@ -151,7 +151,7 @@ def main(input_transcripts_text,input_file_name):
         print ("Failed to write the input transcripts to S3 due to ", e)
         import pdb;pdb.set_trace()
     try:
-        with open('./../sred_report_output/sred_report.txt', 'w') as f:
+        with open('./sred_report_output/sred_report.txt', 'w') as f:
             f.write(sred_report_text)
         print("SRED report written to sred_report.txt")
     except Exception as e:
