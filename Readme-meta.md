@@ -20,3 +20,16 @@ postgres creds
 postgres, postrgres
 postgres endpoint
 database-1.cp08y8cawkhj.us-east-2.rds.amazonaws.com
+
+
+[Unit]
+Description=Redis proxy using socat
+After=network.target
+
+[Service]
+User=ubuntu
+Restart=always
+ExecStart=/usr/bin/socat TCP-LISTEN:6379,reuseaddr,fork TCP:clustercfg.vector-zerodraftai-redis-vectordb.dkvbaf.memorydb.us-east-2.amazonaws.com:6379
+
+[Install]
+WantedBy=multi-user.target

@@ -1,10 +1,10 @@
 import redis
 # host='clustercfg.vector-zerodraftai-redis-vectordb.dkvbaf.memorydb.us-east-2.amazonaws.com',
 redis_client = redis.StrictRedis(
-    host = '3.148.171.192',
+    host = '18.219.30.254',
     port=6379,
     decode_responses=True,
-    ssl=False
+    ssl=True
 )
 # clustercfg.vector-zerodraftai-collab-redis-vectordb.dkvbaf.memorydb.us-east-2.amazonaws.com:6379
 try:

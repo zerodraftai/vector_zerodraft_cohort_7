@@ -30,7 +30,7 @@ s3_client = boto3.client(
 )
 aws_s3_bucket = 'vector-zerodraftai-collab-s3'
 try:
-    ec2_public_ip = start_ec2_via_lambda()
+    ec2_public_ip = "18.219.30.254"
 except Exception as e:
     print ("The function start_ec2_via_lambda failed due to ", e)
     import pdb;pdb.set_trace()
@@ -41,7 +41,7 @@ redis_client = redis.StrictRedis(
     host=redis_url,
     port=6379,
     decode_responses=True,
-    ssl=False
+    ssl=True
 )
 print (f"\nEC2 Public IP Address:{ec2_public_ip}\n")
 vector_index_value = 'my_vector_index_4'
