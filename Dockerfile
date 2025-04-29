@@ -1,6 +1,7 @@
 # Use slim Python base image
 FROM python:3.9-slim
 
+
 # Set working directory
 WORKDIR /app
 
@@ -12,7 +13,7 @@ RUN apt-get update && apt-get install -y \
 # Copy requirements and install
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
-
+RUN python -m nltk.downloader wordnet omw-1.4
 # Copy app code
 COPY . .
 

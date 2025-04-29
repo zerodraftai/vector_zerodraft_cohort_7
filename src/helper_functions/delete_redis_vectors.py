@@ -1,7 +1,7 @@
 import redis
 # host='clustercfg.vector-zerodraftai-redis-vectordb.dkvbaf.memorydb.us-east-2.amazonaws.com',
 redis_client = redis.StrictRedis(
-    host = '3.133.131.174',
+    host = '3.148.171.192',
     port=6379,
     decode_responses=True,
     ssl=False
