@@ -30,7 +30,8 @@ def main(input_transcripts_text,input_file_name):
     )
     aws_s3_bucket = 'vector-zerodraftai-collab-s3'
     try:
-        ec2_public_ip = "18.219.30.254"
+        # ec2_public_ip = "18.219.30.254"
+        ec2_public_ip = os.getenv("EC2_PUBLIC_IP")
     except Exception as e:
         print ("The function start_ec2_via_lambda failed due to ", e)
         import pdb;pdb.set_trace()
@@ -92,19 +93,19 @@ def main(input_transcripts_text,input_file_name):
     input_text_file_key = 'Input_data/{input_file_name}'
     output_chunk_file_key = f"Chunks/{input_text_file_key.split('/')[-1].replace('.txt', '_chunks.json')}"
     # print (input_chunk_file_key)
-    # try:
-    #     print ("Performing chunking...")
-    #     perform_chunking_main(s3_client,aws_s3_bucket,input_text_file_key,output_chunk_file_key, "semantic", chunk_size=300)
-    # except Exception as e:
-    #     print ("The function perform_chunking_main failed due to ", e)
-    #     import pdb;pdb.set_trace()
+    try:
+        print ("Performing chunking...")
+        perform_chunking_main(s3_client,aws_s3_bucket,input_text_file_key,output_chunk_file_key, "semantic", chunk_size=300)
+    except Exception as e:
+        print ("The function perform_chunking_main failed due to ", e)
+        import pdb;pdb.set_trace()
 
-    # try:
-    #     print ("Generating and storing embeddings...")
-    #     generate_and_store_embeddings_main(s3_client,aws_s3_bucket,output_chunk_file_key,redis_client,openai_api_client,vector_index_value)
-    # except Exception as e:
-    #     print ("The function generate_and_store_embeddings_main failed due to ", e)
-    #     import pdb;pdb.set_trace()
+    try:
+        print ("Generating and storing embeddings...")
+        generate_and_store_embeddings_main(s3_client,aws_s3_bucket,output_chunk_file_key,redis_client,openai_api_client,vector_index_value)
+    except Exception as e:
+        print ("The function generate_and_store_embeddings_main failed due to ", e)
+        import pdb;pdb.set_trace()
     try:
         print ("Running RAG pipeline...")
         top_20_summarised_proj_desc = rag_pipeline_main(vector_index_value,redis_client,'vector-zerodraftai-redis-vectordb-0001',openai_api_key,openai_api_client)

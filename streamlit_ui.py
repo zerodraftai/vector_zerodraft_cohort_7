@@ -30,7 +30,8 @@ s3_client = boto3.client(
 )
 aws_s3_bucket = 'vector-zerodraftai-collab-s3'
 try:
-    ec2_public_ip = "18.219.30.254"
+    # ec2_public_ip = "18.219.30.254"
+    ec2_public_ip = os.getenv("EC2_PUBLIC_IP")
 except Exception as e:
     print ("The function start_ec2_via_lambda failed due to ", e)
     import pdb;pdb.set_trace()
