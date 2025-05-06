@@ -7,6 +7,7 @@ from src.sred_report_evaluation.evaluate_sred_report import evaluate_sred_report
 from src.helper_functions.helper_function import write_input_text_file_to_s3
 from src.helper_functions.automate_ec2_lambda_func import start_ec2_via_lambda,stop_ec2_via_lambda
 import streamlit as st
+import datetime
 import os
 import boto3
 from openai import OpenAI
@@ -49,7 +50,8 @@ def main(input_transcripts_text,input_file_name):
     except Exception as e:
         print ("The Redis connection failed due to ", e)
         import pdb;pdb.set_trace()
-    vector_index_value = os.getenv("VECTOR_INDEX_NAME")
+    timestamp = datetime.datetime.utcnow().strftime("%Y%m%d%H%M%S")
+    vector_index_value = f"vector_index_{timestamp}"
 
     def create_vector_index(redis_client, vector_index_name, embedding_dim=1536):
         existing_indexes = redis_client.execute_command("FT._LIST")
