@@ -3,6 +3,8 @@ services:
   streamlit:
     build: .
     container_name: streamlit_app
+    env_file:
+      - .env
     expose:
       - "8501"
   nginx:
